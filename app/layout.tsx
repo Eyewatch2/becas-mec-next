@@ -12,10 +12,6 @@ export const metadata: Metadata = {
     "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
   keywords:
     "becas, uruguay, educación, cultura, ministerio, estudio, financiamiento, educativo",
-  icons: {
-    icon: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
-  },
 };
 
 export default function RootLayout({
