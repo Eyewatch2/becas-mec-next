@@ -28,6 +28,7 @@ const Header = () => {
                   rel="noreferrer noopener"
                   className="w-8 h-8 grid place-content-center bg-green-500 hover:bg-green-600 transition-colors ease-in-out aspect-square rounded-full"
                 >
+                  <span className="sr-only">Enlace a Facebook</span>
                   <FaFacebookF className="w-full h-full" />
                 </Link>
               </li>
@@ -38,6 +39,7 @@ const Header = () => {
                   target="_blank"
                   className="w-8 h-8 grid place-content-center bg-green-500 aspect-square hover:bg-green-600 transition-colors ease-in-out rounded-full"
                 >
+                  <span className="sr-only">Enlace a Instagram</span>
                   <FaInstagram className="w-full h-full" />
                 </Link>
               </li>

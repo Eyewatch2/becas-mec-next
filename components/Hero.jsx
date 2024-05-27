@@ -11,6 +11,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="container z-10 max-w-screen-lg mx-auto h-full flex flex-col">
                 <div className="hero-logo flex items-center">
+                    <h1 className='sr-only'>Becas del Uruguay, Ministerio de Educación y Cultura</h1>
                     <Image
                         src={"/images/LOGO_BECA2.png"}
                         width={318}
