@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   keywords:
     "becas, uruguay, educación, cultura, ministerio, estudio, financiamiento, educativo",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon-32x32.png",
     apple: "/apple-touch-icon.png",
   },
 };
