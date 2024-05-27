@@ -9,6 +9,6 @@
   }
 }
 
-body {
+* {
   scroll-behavior: smooth;
 }

@@ -19,7 +19,7 @@ const BottomInfoBanner = () => {
         <Link
           scroll
           href="#"
-          className="bg-green-500 xl:text-xl hover:bg-green-600 transition-colors ease-in-out text-center md:text-end font-bold w-[calc(100%-1.25rem)] md:w-fit text-white px-10 py-4 md:py-2.5 rounded-full"
+          className="text-white block font-bold text-center w-full md:w-fit bg-green-500 transition-colors ease-in-out px-12 py-3 rounded-full hover:bg-green-600"
         >
           ¡Descargá ya!
         </Link>
