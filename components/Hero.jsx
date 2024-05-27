@@ -30,7 +30,7 @@ const Hero = () => {
                     </p>
                 </div>
                 <div className="p-5 md:py-0 lg:p-0 w-full md:w-fit mt-5">
-                    <Link href="#encontraTuBeca" className="text-white block font-bold text-center w-full md:w-fit bg-green-500 transition-colors ease-in-out px-12 py-3 rounded-full hover:bg-green-600">
+                    <Link scroll href="#encontraTuBeca" className="text-white block font-bold text-center w-full md:w-fit bg-green-500 transition-colors ease-in-out px-12 py-3 rounded-full hover:bg-green-600">
                         Buscar Becas
                     </Link>
                 </div>
