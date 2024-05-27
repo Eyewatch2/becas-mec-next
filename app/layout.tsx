@@ -22,8 +22,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="apple-touch-icon" href="/android-chrome-192x192" />
-        <link rel="" href="" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={manrope.className}>
         <Header />
