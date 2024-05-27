@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import es from 'date-fns/locale/es';
@@ -24,8 +24,6 @@ const FilterDeBecas = () => {
     const [becasLoading, setBecasLoading] = useState(true);
     const [nivelesEducativos, setNivelesEducativos] = useState([]);
     const [nivelesLoading, setNivelesLoading] = useState(true);
-
-
 
     useEffect(() => {
         const fetchBecas = async () => {
@@ -56,9 +54,15 @@ const FilterDeBecas = () => {
         fetchNivelesEducativos();
     }, []);
 
-    const today = new Date();
+    const today = useMemo(() => new Date(), []);
 
-    const filtrar = () => {
+    const calcularEdad = (fechaNacimiento) => {
+        const diff = Date.now() - fechaNacimiento.getTime();
+        const edad = new Date(diff);
+        return Math.abs(edad.getUTCFullYear() - 1970);
+    };
+
+    const filtrar = useCallback(() => {
         const fechaNacimiento = startDate || today;
         let edad = calcularEdad(fechaNacimiento);
 
@@ -83,20 +87,15 @@ const FilterDeBecas = () => {
             return true;
         });
         setFilteredBecas(becasFiltradas?.filter(beca => beca.mostrar));
-    };
+    }, [startDate, today, nivelEducativo, departamento, selectedCategories, becasData]);
 
-    const calcularEdad = (fechaNacimiento) => {
-        const diff = Date.now() - fechaNacimiento.getTime();
-        const edad = new Date(diff);
-        return Math.abs(edad.getUTCFullYear() - 1970);
-    };
 
     useEffect(() => {
         if (becasData) {
             filtrar();
             setPaginaActual(1);
         }
-    }, [startDate, nivelEducativo, departamento, selectedCategories, becasData]);
+    }, [startDate, nivelEducativo, departamento, selectedCategories, becasData, filtrar, setPaginaActual]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -168,9 +167,6 @@ const FilterDeBecas = () => {
         setSelectedCategories(selectedCategories.includes(category) ? selectedCategories.filter(cat => cat !== category) : [...selectedCategories, category]);
 
     };
-
-
-
 
     return (
         <section id='encontraTuBeca' className="encuentra-tu-beca bg-transparent">

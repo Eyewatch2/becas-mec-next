@@ -18,7 +18,7 @@ const ContenedorBecas = ({ becas, paginaActual, setPaginaActual }) => {
 
     useEffect(() => {
         setPaginaActual(1);
-    }, [becas]);
+    }, [becas, setPaginaActual]);
 
     const openModal = (beca) => {
         setIsModalOpen(true);
