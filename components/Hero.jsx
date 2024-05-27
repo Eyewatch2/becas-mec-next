@@ -30,9 +30,9 @@ const Hero = () => {
             amplia variedad de becas en diferentes campos y niveles de estudio.
             Nuestro objetivo es ayudarte a alcanzar tus metas educativas sin la
             preocupación financiera.
-            <span className="block text-xs text-white/60 my-2">
-              Desarrollado por el Ministerio de Educación y Cultura del Uruguay.
-            </span>
+          </p>
+          <p className="block text-xs text-white/60">
+            Desarrollado por el Ministerio de Educación y Cultura del Uruguay.
           </p>
         </div>
         <div className="p-5 md:py-0 lg:p-0 w-full md:w-fit mt-5">
