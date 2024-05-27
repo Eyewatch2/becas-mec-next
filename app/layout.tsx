@@ -8,8 +8,14 @@ const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Becas Uruguay | Ministerio de Educación y Cultura",
-  description: "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
-  keywords: "becas, uruguay, educación, cultura, ministerio, estudio, financiamiento, educativo",
+  description:
+    "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
+  keywords:
+    "becas, uruguay, educación, cultura, ministerio, estudio, financiamiento, educativo",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -19,10 +25,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <link rel="apple-touch-icon" href="/android-chrome-192x192" />
+        <link rel="" href="" />
+      </head>
       <body className={manrope.className}>
         <Header />
         {children}
-        </body>
+      </body>
     </html>
   );
 }
