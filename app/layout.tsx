@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={manrope.className}>
         <Header />
