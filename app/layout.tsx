@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "becas, uruguay, educación, cultura, ministerio, estudio, financiamiento, educativo",
   twitter: {
     card: "summary",
-    description: "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
+    description:
+      "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
   },
   creator: "Nicestream",
   category: "Education",
@@ -22,7 +23,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_UY",
     title: "Becas Uruguay | Ministerio de Educación y Cultura",
-    description: "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
+    description:
+      "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
     url: "https://becas.edu.uy",
   },
 };
@@ -35,6 +37,12 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <link
+          rel="icon"
+          href="/favicon.ico"
+          type="image/x-icon"
+          sizes="16x16"
+        />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={manrope.className}>
