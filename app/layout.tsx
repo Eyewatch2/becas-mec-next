@@ -16,8 +16,6 @@ export const metadata: Metadata = {
     card: "summary",
     description: "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
   },
-  robots: "index, follow",
-  manifest: "/site.webmanifest",
   creator: "Nicestream",
   category: "Education",
   openGraph: {
