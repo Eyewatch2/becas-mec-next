@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
   },
   icons: {
-    icon: "/favicon-16x16.png",
+    icon: "/favicon-32x32.png",
   },
   creator: "Nicestream",
   category: "Education",
@@ -42,9 +42,9 @@ export default function RootLayout({
       <head>
         <link
           rel="icon"
-          href="/favicon-16x16.png"
+          href="/favicon-32x32.png"
           type="image/png"
-          sizes="16x16"
+          sizes="32x32"
         />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
