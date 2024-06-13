@@ -327,7 +327,7 @@ const FilterDeBecas = () => {
                 index < 3 ? "md:w-[calc(33%-0.7rem)]" : "md:w-[calc(25%-1rem)]"
               } ${
                 index === 0 ? "w-[calc(100%-2.5rem)]" : "w-[calc(50%-2rem)]"
-              } md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2 ${
+              } md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2  bg-cover ${
                 selectedCategories.includes(c.nombre)
                   ? "border-green-500 text-white/60"
                   : selectedCategories.length === 0 && index === 0

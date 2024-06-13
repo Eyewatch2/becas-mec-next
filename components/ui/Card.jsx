@@ -9,12 +9,12 @@ import transporte from "@/components/ui/svg/transporte.svg";
 import Image from "next/image";
 
 const bgImageClass = {
-  "Apoyo Económico": 'bg-[url("/images/apoyo_economico.png")]',
-  Transporte: 'bg-[url("/images/transporte.png")]',
-  Alojamiento: 'bg-[url("/images/alojamiento.png")]',
-  Alimentación: 'bg-[url("/images/alimentacion.png")]',
-  "Material de estudio": 'bg-[url("/images/material_de_estudio.png")]',
-  Otros: 'bg-[url("/images/otros.png")]',
+  "Apoyo Económico": "/images/apoyo_economico.png",
+  Transporte: "/images/transporte.png",
+  Alojamiento: "/images/alojamiento.png",
+  Alimentación: "/images/alimentacion.png",
+  "Material de estudio": "/images/material_de_estudio.png",
+  Otros: "/images/otros.png",
 };
 const tagBgColorClass = {
   "Apoyo Económico": "bg-amber-600",
@@ -118,7 +118,8 @@ const Card = ({ beca, openModal }) => {
           {CardIcon({ tipo })}
         </div>
         <div
-          className={`absolute w-full h-full bg-black inset-0 bg-gradient-to-t ${bgImageClass[tipo]}`}
+          className={`absolute w-full h-full bg-black bg-cover inset-0 bg-gradient-to-t`}
+          style={{backgroundImage: `url(${bgImageClass[tipo]})`}}
         ></div>
       </div>
     </article>
