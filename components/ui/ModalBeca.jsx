@@ -2,13 +2,13 @@ import Link from 'next/link';
 import React from 'react';
 
 const tagBgColorClass = {
-    'Apoyo Económico': 'bg-purple-500',
-    'Transporte': 'bg-blue-500',
-    'Alojamiento': 'bg-red-500',
-    'Alimentación': 'bg-yellow-500',
-    'Material de estudio': 'bg-orange-500',
-    'Otros': 'bg-gray-500',
-}
+    "Apoyo Económico": "bg-amber-600",
+    Transporte: "bg-red-600",
+    Alojamiento: "bg-blue-600",
+    Alimentación: "bg-orange-600",
+    "Material de estudio": "bg-purple-700",
+    Otros: "bg-green-600",
+  };
 
 const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
     const hayRequisitosDeEdad = becaSeleccionada.edad_max || becaSeleccionada.edad_min;
