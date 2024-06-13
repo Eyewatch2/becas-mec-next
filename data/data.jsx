@@ -2,49 +2,49 @@ export const categoriesData = [
     {
         nombre: "Todas las Categorías",
         color: "rojo",
-        foto: "https://picsum.photos/300/200",
+        foto: "/images/todas.png",
         info: "Becas para diversas necesidades educativas",
         tag: "¡Inscripciones Abiertas!"
     },
     {
         nombre: "Apoyo Económico",
         color: "verde",
-        foto: "https://picsum.photos/300/200?random=1",
+        foto: "/images/apoyo_economico.png",
         info: "Becas para diversas necesidades educativas",
         tag: "¡Inscripciones Abiertas!"
     },
     {
         nombre: "Transporte",
         color: "azul",
-        foto: "https://picsum.photos/300/200?random=2",
+        foto: "/images/transporte.png",
         info: "Becas para diversas necesidades educativas",
         tag: "¡Inscripciones Abiertas!"
     },
     {
         nombre: "Alimentación",
         color: "amarillo",
-        foto: "https://picsum.photos/300/200?random=3",
+        foto: "/images/alimentacion.png",
         info: "Becas para diversas necesidades educativas",
         tag: "¡Inscripciones Abiertas!"
     },
     {
         nombre: "Alojamiento",
         color: "violeta",
-        foto: "https://picsum.photos/300/200?random=4",
+        foto: "/images/alojamiento.png",
         info: "Becas para diversas necesidades educativas",
         tag: "¡Inscripciones Abiertas!"
     },
     {
         nombre: "Material de Estudio",
         color: "naranja",
-        foto: "https://picsum.photos/300/200?random=6",
+        foto: "/images/material_de_estudio.png",
         info: "Becas para diversas necesidades educativas",
         tag: "¡Inscripciones Abiertas!"
     },
     {
         nombre: "Otros",
         color: "gris",
-        foto: "https://picsum.photos/300/200?random=5",
+        foto: "/images/otros.png",
         info: "Becas para diversas necesidades educativas",
         tag: "¡Inscripciones Abiertas!"
     }
