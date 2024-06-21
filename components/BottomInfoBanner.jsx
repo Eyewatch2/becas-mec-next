@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DownloadBtn from "./ui/DownloadBtn";
 
 const BottomInfoBanner = () => {
   return (
@@ -16,13 +17,7 @@ const BottomInfoBanner = () => {
           Descargá nuestra guía completa de becas de estudio y encontrá la que
           se ajuste a tus necesidades. ¡No te quedes sin tu beca!
         </p>
-        <Link
-          scroll
-          href="#"
-          className="text-white block font-bold text-center w-full md:w-fit bg-green-500 transition-colors ease-in-out px-12 py-3 rounded-full hover:bg-green-600"
-        >
-          ¡Descargá ya!
-        </Link>
+       <DownloadBtn />
       </div>
     </section>
   );

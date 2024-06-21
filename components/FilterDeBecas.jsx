@@ -12,7 +12,6 @@ import { stables } from "@/stables/stables";
 import FiltrosAplicados from "./ui/FiltrosAplicados";
 
 const getBackgroundImage = (name) => {
-    console.log(name);
   switch (name) {
     case "Apoyo Económico":
       return "/images/apoyo_economico.png";

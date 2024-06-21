@@ -33,7 +33,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "dist/types/**/*.ts"
-  ],
+, "components/ui/DownloadBtn.jsx"  ],
   "exclude": [
     "node_modules"
   ]
