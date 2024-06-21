@@ -26,7 +26,7 @@ const Footer = () => {
           </li>
           <li>
             <Link
-              href="https://www.instagram.com/mec_uruguay/"
+              href="https://www.instagram.com/becas.uruguay"
               target="_blank"
               className="w-8 h-8 grid place-content-center md:hover:scale-110 transition-all ease-in-out bg-white aspect-square rounded-full"
             >

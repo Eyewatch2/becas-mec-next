@@ -35,7 +35,7 @@ const Header = () => {
 
               <li>
                 <Link
-                  href="https://www.instagram.com/mec_uruguay/"
+                  href="https://www.instagram.com/becas.uruguay"
                   target="_blank"
                   className="w-8 h-8 grid place-content-center bg-green-500 aspect-square hover:bg-green-600 transition-colors ease-in-out rounded-full"
                 >
