@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_UY",
     title: "Becas Uruguay | Ministerio de Educación y Cultura",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 946,
+        height: 918,
+        alt: "Becas Uruguay | Ministerio de Educación y Cultura",
+      },
+    ],
     description:
       "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
     url: "https://becas.edu.uy",
