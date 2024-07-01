@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://becas.edu.uy"),
   title: "Becas Uruguay | Ministerio de Educación y Cultura",
   description:
     "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
@@ -14,6 +15,14 @@ export const metadata: Metadata = {
     "becas, uruguay, educación, cultura, ministerio, estudio, financiamiento, educativo",
   twitter: {
     card: "summary",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1920,
+        height: 918,
+        alt: "Becas Uruguay | Ministerio de Educación y Cultura",
+      },
+    ],
     description:
       "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
   },
@@ -34,6 +43,8 @@ export const metadata: Metadata = {
         alt: "Becas Uruguay | Ministerio de Educación y Cultura",
       },
     ],
+    siteName: "Becas Uruguay",
+    countryName: "Uruguay",
     description:
       "Descubre la beca perfecta que se adapte a tus necesidades y metas académicas en una amplia variedad de campos y niveles de estudio",
     url: "https://becas.edu.uy",
