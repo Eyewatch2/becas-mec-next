@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/og-image.png",
-        width: 946,
+        width: 1920,
         height: 918,
         alt: "Becas Uruguay | Ministerio de Educación y Cultura",
       },
