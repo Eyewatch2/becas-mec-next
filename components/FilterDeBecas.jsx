@@ -257,20 +257,22 @@ const FilterDeBecas = () => {
           >
             <div className="flex p-5 md:p-0 flex-col md:flex-row gap-5 md:gap-2 justify-between items-center">
               <div className="w-full md:w-fit border-green-800">
-                <DatePicker
-                  selected={startDate}
-                  label="Fecha de Nacimiento"
-                  onChange={(date) => setStartDate(date)}
-                  placeholderText="Fecha de nacimiento:"
-                  className="!w-full placeholder:text-green-800 relative border md:text-center cursor-default border-gray-400 md:rounded-none rounded-lg md:border-none md:w-auto px-4 md:pl-4 md:pr-0 bg-transparent py-2 md:rounded-l-full"
-                  showYearDropdown
-                  dateFormat={"dd/MM/yyyy"}
-                  showMonthDropdown
-                  yearDropdownItemNumber={40}
-                  maxDate={today}
-                  scrollableYearDropdown
-                  locale={es}
-                />
+                <label>
+                  <span className="sr-only">Fecha de Nacimiento</span>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    placeholderText="Fecha de nacimiento:"
+                    className="!w-full placeholder:text-green-800 relative border md:text-center cursor-default border-gray-400 md:rounded-none rounded-lg md:border-none md:w-auto px-4 md:pl-4 md:pr-0 bg-transparent py-2 md:rounded-l-full"
+                    showYearDropdown
+                    dateFormat={"dd/MM/yyyy"}
+                    showMonthDropdown
+                    yearDropdownItemNumber={40}
+                    maxDate={today}
+                    scrollableYearDropdown
+                    locale={es}
+                  />
+                </label>
               </div>
               <span className="hidden md:inline-block border border-green-500 w-0.5 h-8 bg-green-500" />
               <label for="nivelEducativo" className="sr-only">
