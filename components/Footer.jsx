@@ -18,6 +18,7 @@ const Footer = () => {
             <Link
               href="https://www.facebook.com/MecUru/"
               target="_blank"
+              aria-label="Enlace a Facebook en otra ventana"
               className="w-8 h-8 grid place-content-center md:hover:scale-110 transition-all ease-in-out bg-white aspect-square rounded-full"
             >
               <span className="sr-only">Enlace a Facebook</span>
@@ -28,6 +29,7 @@ const Footer = () => {
             <Link
               href="https://www.instagram.com/becas.uruguay"
               target="_blank"
+              aria-label="Enlace a Instagram en otra ventana"
               className="w-8 h-8 grid place-content-center md:hover:scale-110 transition-all ease-in-out bg-white aspect-square rounded-full"
             >
               <span className="sr-only">Enlace a Instagram</span>

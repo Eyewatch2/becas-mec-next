@@ -48,6 +48,7 @@ const CardIcon = ({ tipo }) => {
     case "Apoyo Económico":
       return (
         <Image
+          role="presentation"
           width={20}
           height={20}
           src={apoyo_economico}
@@ -55,14 +56,29 @@ const CardIcon = ({ tipo }) => {
         />
       );
     case "Transporte":
-      return <Image width={20} height={20} src={transporte} alt="Transporte" />;
+      return (
+        <Image
+          role="presentation"
+          width={20}
+          height={20}
+          src={transporte}
+          alt="Transporte"
+        />
+      );
     case "Alojamiento":
       return (
-        <Image width={20} height={20} src={alojamiento} alt="Alojamiento" />
+        <Image
+          role="presentation"
+          width={20}
+          height={20}
+          src={alojamiento}
+          alt="Alojamiento"
+        />
       );
     case "Alimentación":
       return (
         <Image
+          role="presentation"
           width={16}
           height={16}
           src={iconAlimentacion}
@@ -72,6 +88,7 @@ const CardIcon = ({ tipo }) => {
     case "Material de estudio":
       return (
         <Image
+          role="presentation"
           width={20}
           height={20}
           src={material_de_estudio}
@@ -79,9 +96,25 @@ const CardIcon = ({ tipo }) => {
         />
       );
     case "Otros":
-      return <Image width={20} height={20} src={otros} alt="Otros" />;
+      return (
+        <Image
+          role="presentation"
+          width={20}
+          height={20}
+          src={otros}
+          alt="Otros"
+        />
+      );
     default:
-      return <Image width={20} height={20} src={todas} alt="Todas" />;
+      return (
+        <Image
+          role="presentation"
+          width={20}
+          height={20}
+          src={todas}
+          alt="Todas"
+        />
+      );
   }
 };
 

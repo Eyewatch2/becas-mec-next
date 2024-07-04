@@ -25,6 +25,7 @@ const Header = () => {
                 <Link
                   href="https://www.facebook.com/MecUru/"
                   target="_blank"
+                  aria-label="Enlace a Facebook en otra ventana"
                   rel="noreferrer noopener"
                   className="w-8 h-8 grid place-content-center bg-green-500 hover:bg-green-600 transition-colors ease-in-out aspect-square rounded-full"
                 >
@@ -37,6 +38,7 @@ const Header = () => {
                 <Link
                   href="https://www.instagram.com/becas.uruguay"
                   target="_blank"
+                  aria-label="Enlace a Instagram en otra ventana"
                   className="w-8 h-8 grid place-content-center bg-green-500 aspect-square hover:bg-green-600 transition-colors ease-in-out rounded-full"
                 >
                   <span className="sr-only">Enlace a Instagram</span>
