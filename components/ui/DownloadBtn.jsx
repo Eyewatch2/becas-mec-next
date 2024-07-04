@@ -28,7 +28,7 @@ const DownloadBtn = () => {
     <Link
       href={pdf ? `${stables.BASE_URL}${pdf.pdf.filename}` : "#"}
       target="_blank"
-      className="text-white block font-bold text-center w-full md:w-fit bg-green-500 transition-colors ease-in-out px-12 py-3 rounded-full hover:bg-green-600"
+      className="border border-white/60 text-white block font-bold text-center w-full md:w-fit bg-green-500 transition-colors ease-in-out px-12 py-3 rounded-full hover:bg-green-600"
     >
       {pdfLoading ? "Cargando..." : "¡Descargá ya!"}
     </Link>

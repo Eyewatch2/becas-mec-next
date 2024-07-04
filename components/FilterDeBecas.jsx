@@ -213,7 +213,8 @@ const FilterDeBecas = () => {
         {filter.value}
         <button
           onClick={() => handleRemoveFilter(filter.type, filter.value)}
-          className="ml-2 bg-green-800/20 rounded-sm hover:bg-green-800 transition-all ease-in-out"
+          aria-label={`Remover Filtro de ${filter.value}`}
+          className="ml-2 grid place-content-center rounded-sm hover:bg-red-500 transition-all ease-in-out"
         >
           <IoClose className="text-xl" />
         </button>
@@ -259,7 +260,7 @@ const FilterDeBecas = () => {
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
                   placeholderText="Fecha de nacimiento:"
-                  className="w-full placeholder:text-green-800 relative border md:text-center cursor-default border-gray-400 md:rounded-none rounded-lg md:border-none md:w-auto px-4 md:pl-4 md:pr-0 bg-transparent py-2 md:rounded-l-full"
+                  className="!w-full placeholder:text-green-800 relative border md:text-center cursor-default border-gray-400 md:rounded-none rounded-lg md:border-none md:w-auto px-4 md:pl-4 md:pr-0 bg-transparent py-2 md:rounded-l-full"
                   showYearDropdown
                   dateFormat={"dd/MM/yyyy"}
                   showMonthDropdown
@@ -270,12 +271,16 @@ const FilterDeBecas = () => {
                 />
               </div>
               <span className="hidden md:inline-block border border-green-500 w-0.5 h-8 bg-green-500" />
+              <label for="nivelEducativo" className="sr-only">
+                Nivel Educativo
+              </label>
               <select
+                id="nivelEducativo"
                 ref={nivelEducativoRef}
                 onChange={(e) => setNivelEducativo(e.target.value)}
                 defaultValue={0}
                 name="nivelEducativo"
-                className="border border-gray-400 md:rounded-none rounded-lg md:border-none px-4 bg-transparent py-2 w-full md:w-auto"
+                className="border min-w-[44px] min-h-[44px] border-gray-400 md:rounded-none rounded-lg md:border-none px-4 bg-transparent py-2 w-full md:w-auto"
               >
                 {!nivelesLoading ? (
                   <>
@@ -292,12 +297,16 @@ const FilterDeBecas = () => {
                 )}
               </select>
               <span className="hidden md:inline-block border border-green-500 w-0.5 h-8 bg-green-500" />
+              <label for="departamento" className="sr-only">
+                Departamento
+              </label>
               <select
+                id="departamento"
                 ref={departamentoRef}
                 onChange={(e) => setDepartamento(e.target.value)}
                 defaultValue={0}
                 name="departamento"
-                className="border border-gray-400 md:rounded-none rounded-lg md:border-none px-4 bg-transparent py-2 w-full md:w-auto"
+                className="border !min-w-fit border-gray-400 md:rounded-none rounded-lg md:border-none px-4 bg-transparent py-2 w-full md:w-auto"
               >
                 <option value={0}>Tu Departamento</option>
                 {todosLosDepartamentosUruguay.map((departamento, index) => (
@@ -308,6 +317,7 @@ const FilterDeBecas = () => {
               </select>
               <button
                 type="submit"
+                aria-label="Buscar Becas"
                 className="bg-green-500 hover:bg-green-600 transition-all ease-in-out focus:bg-green-600 text-white px-10 py-3 w-full hidden md:block md:w-auto rounded-full md:rounded-l-none"
               >
                 <FaMagnifyingGlass />
@@ -317,7 +327,7 @@ const FilterDeBecas = () => {
         </div>
       </div>
       <div className="max-w-screen-lg mx-auto bg-white md:px-10">
-        <div className="flex flex-wrap gap-5 pb-5 justify-center">
+        <div className="flex flex-wrap gap-2 md:gap-5 pb-5 justify-center">
           {categoriesData.map((c, index) => (
             <button
               key={index}
@@ -325,8 +335,8 @@ const FilterDeBecas = () => {
               className={`relative ${
                 index < 3 ? "md:w-[calc(33%-0.7rem)]" : "md:w-[calc(25%-1rem)]"
               } ${
-                index === 0 ? "w-[calc(100%-2.5rem)]" : "w-[calc(50%-2rem)]"
-              } md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2  bg-cover ${
+                index === 0 ? "w-[calc(100%-1.5rem)]" : "w-[calc(50%-1rem)]"
+              } md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2 bg-cover ${
                 selectedCategories.includes(c.nombre)
                   ? "border-green-500 text-white/60"
                   : selectedCategories.length === 0 && index === 0

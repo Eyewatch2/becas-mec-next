@@ -17,12 +17,12 @@ const bgImageClass = {
   Otros: "/images/otros.png",
 };
 const tagBgColorClass = {
-  "Apoyo Económico": "bg-amber-600",
-  Transporte: "bg-red-600",
-  Alojamiento: "bg-blue-600",
-  Alimentación: "bg-orange-600",
-  "Material de estudio": "bg-purple-700",
-  Otros: "bg-green-600",
+  "Apoyo Económico": "bg-amber-900",
+  Transporte: "bg-red-900",
+  Alojamiento: "bg-blue-900",
+  Alimentación: "bg-orange-900",
+  "Material de estudio": "bg-purple-800",
+  Otros: "bg-green-900",
 };
 
 const textByType = {
@@ -86,15 +86,17 @@ const Card = ({ beca, openModal }) => {
   const estaVigente = fechaActual >= fechaInicio && fechaActual <= fechaFin;
 
   return (
-    <article
+    <button
       onClick={() => openModal(beca)}
-      className="w-full cursor-pointer md:w-[calc(31.5%)] md:hover:scale-110 transition-all ease-in-out px-4 md:px-0"
+      className="w-full bg-black rounded-xl cursor-pointer md:w-[calc(31.5%)] md:hover:scale-110 transition-all ease-in-out md:px-0"
     >
       <div
         className={`relative rounded-xl overflow-hidden pt-[35%] md:pt-[70%]`}
       >
         <div className="absolute inset-0 bg-cover bg-center"></div>
-        <div className={`absolute z-10 top-0 left-0 p-4 ${textByType[tipo]}`}>
+        <div
+          className={`absolute text-left z-10 top-0 left-0 p-4  ${textByType[tipo]}`}
+        >
           <h2 className="font-bold text-md md:text-xl">{nombre}</h2>
           <span className="font-light text-xs md:text-base">{institucion}</span>
         </div>
@@ -119,10 +121,10 @@ const Card = ({ beca, openModal }) => {
         </div>
         <div
           className={`absolute w-full h-full bg-black bg-cover inset-0 bg-gradient-to-t`}
-          style={{backgroundImage: `url(${bgImageClass[tipo]})`}}
+          style={{ backgroundImage: `url(${bgImageClass[tipo]})` }}
         ></div>
       </div>
-    </article>
+    </button>
   );
 };
 

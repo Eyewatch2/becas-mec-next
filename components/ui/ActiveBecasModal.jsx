@@ -44,7 +44,8 @@ const ActiveBecasModal = () => {
             </p>
             <div className="flex justify-center mt-5">
               <button
-                className="bg-red-500 hover:bg-red-600 transition w-full md:w-1/2 text-white px-4 py-2 rounded-lg"
+                autoFocus
+                className="bg-red-800 red-button hover:bg-red-700 transition w-full md:w-1/2 text-white px-4 py-2 rounded-lg"
                 onClick={() => setShowModal(false)}
               >
                 Cerrar

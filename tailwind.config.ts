@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         green: {
-          500: '#2EBB38',
+          500: '#0B6610',
+          600: '#054408',
           800: '#083E0C',
         }
       },

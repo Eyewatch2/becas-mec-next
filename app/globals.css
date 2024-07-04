@@ -16,3 +16,48 @@
 .react-datepicker-popper {
   z-index: 50 !important;
 }
+
+a,
+button,
+select,
+input,
+textarea,
+li {
+  min-width: 44px !important;
+  min-height: 44px !important;
+}
+
+a:focus,
+button:not(.red-button):focus,
+select:focus,
+input:focus,
+textarea:focus {
+  outline: none;  
+  box-shadow: 0 0 0 3px rgb(214, 0, 118);
+}
+
+.red-button:focus {
+  outline: none;  
+  box-shadow: 0 0 0 3px rgb(0, 225, 255);
+}
+
+
+ul[role="navigation"] li {
+  display: grid;
+  place-content: center;
+
+}
+
+ul[role="navigation"] li a {
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+p {
+  line-height: 1.5!important;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}

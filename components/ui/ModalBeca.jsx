@@ -71,7 +71,7 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
                                 </p>                            </div>}
                         </div>
                         <div className='w-full flex flex-col md:flex-row md:gap-3'>
-                            <button onClick={() => setIsModalOpen(false)} className='bg-red-500 text-white w-full py-2 mt-5 rounded-xl hover:bg-red-600 transition-colors ease-in-out duration-300'>Cerrar</button>
+                            <button autoFocus onClick={() => setIsModalOpen(false)} className='red-button bg-red-800 text-white w-full py-2 mt-5 rounded-xl hover:bg-red-700 transition-colors ease-in-out duration-300'>Cerrar</button>
                             {becaSeleccionada.link && <Link href={becaSeleccionada.link} target='_blank' rel='noreferrer' className='bg-green-500 text-center text-white w-full py-2 mt-5 rounded-xl hover:bg-green-600 transition-colors ease-in-out duration-300'>Saber más</Link>}
                         </div>
                     </div>
