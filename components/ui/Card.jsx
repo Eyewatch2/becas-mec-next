@@ -34,6 +34,15 @@ const textByType = {
   Otros: "text-green-100",
 };
 
+const bgByType = {
+  "Apoyo Económico": "bg-white",
+  Transporte: "bg-black",
+  Alojamiento: "bg-black",
+  Alimentación: "bg-black",
+  "Material de estudio": "bg-black",
+  Otros: "bg-black",
+};
+
 const CardIcon = ({ tipo }) => {
   switch (tipo) {
     case "Apoyo Económico":
@@ -88,7 +97,7 @@ const Card = ({ beca, openModal }) => {
   return (
     <button
       onClick={() => openModal(beca)}
-      className="w-full bg-black rounded-xl cursor-pointer md:w-[calc(31.5%)] md:hover:scale-110 transition-all ease-in-out md:px-0"
+      className={`w-full rounded-xl cursor-pointer md:w-[calc(31.5%)] md:hover:scale-110 transition-all ease-in-out md:px-0 ${bgByType[tipo]}`}
     >
       <div
         className={`relative rounded-xl overflow-hidden pt-[35%] md:pt-[70%]`}
