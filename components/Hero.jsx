@@ -18,7 +18,7 @@ const Hero = () => {
             src={"/images/LOGO_BECA2.png"}
             width={318}
             height={206}
-            alt="Logo"
+            alt="Becas MEC"
             className="mx-5 xl:mx-0 w-1/2 md:w-1/4"
           />
         </div>

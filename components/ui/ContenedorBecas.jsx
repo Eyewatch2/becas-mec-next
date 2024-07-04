@@ -48,7 +48,7 @@ const ContenedorBecas = ({ becas, paginaActual, setPaginaActual }) => {
                     ))}
                 </div>
                 {numeroDePaginas > 1 && (
-                    <div className='flex justify-center items-center gap-2 mt-4 pb-5'>
+                    <ul className='flex justify-center items-center gap-2 mt-4 pb-5'>
                         <ReactPaginate
                             pageCount={numeroDePaginas}
                             pageRangeDisplayed={1}
@@ -65,7 +65,7 @@ const ContenedorBecas = ({ becas, paginaActual, setPaginaActual }) => {
                                 window.location.href = "#becasEncontradas";
                             }}
                         />
-                    </div>
+                    </ul>
                 )}
             </section>
         </>

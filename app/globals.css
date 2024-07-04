@@ -27,16 +27,16 @@ li {
   min-height: 44px !important;
 }
 
-a:focus,
-button:not(.red-button):focus,
-select:focus,
-input:focus,
-textarea:focus {
+a:not(:active):focus,
+button:not(:active):not(.red-button):focus,
+select:not(:active):focus,
+input:not(:active):focus,
+textarea:not(:active):focus {
   outline: none;  
   box-shadow: 0 0 0 3px rgb(214, 0, 118);
 }
 
-.red-button:focus {
+.red-button:not(:active):focus {
   outline: none;  
   box-shadow: 0 0 0 3px rgb(0, 225, 255);
 }

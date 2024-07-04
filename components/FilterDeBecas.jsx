@@ -10,6 +10,7 @@ import { IoClose } from "react-icons/io5";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { stables } from "@/stables/stables";
 import FiltrosAplicados from "./ui/FiltrosAplicados";
+import Link from "next/link";
 
 const getBackgroundImage = (name) => {
   switch (name) {
@@ -258,6 +259,7 @@ const FilterDeBecas = () => {
               <div className="w-full md:w-fit border-green-800">
                 <DatePicker
                   selected={startDate}
+                  label="Fecha de Nacimiento"
                   onChange={(date) => setStartDate(date)}
                   placeholderText="Fecha de nacimiento:"
                   className="!w-full placeholder:text-green-800 relative border md:text-center cursor-default border-gray-400 md:rounded-none rounded-lg md:border-none md:w-auto px-4 md:pl-4 md:pr-0 bg-transparent py-2 md:rounded-l-full"
@@ -315,13 +317,14 @@ const FilterDeBecas = () => {
                   </option>
                 ))}
               </select>
-              <button
-                type="submit"
+              <Link
+                scroll
+                href={"#becasEncontradas"}
                 aria-label="Buscar Becas"
                 className="bg-green-500 hover:bg-green-600 transition-all ease-in-out focus:bg-green-600 text-white px-10 py-3 w-full hidden md:block md:w-auto rounded-full md:rounded-l-none"
               >
                 <FaMagnifyingGlass />
-              </button>
+              </Link>
             </div>
           </form>
         </div>
