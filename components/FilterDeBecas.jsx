@@ -377,6 +377,7 @@ const FilterDeBecas = () => {
 
         {filteredBecas && (
           <ContenedorBecas
+            loading={becasLoading}
             becas={filteredBecas}
             paginaActual={paginaActual}
             setPaginaActual={setPaginaActual}
