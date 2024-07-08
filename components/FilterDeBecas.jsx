@@ -215,7 +215,7 @@ const FilterDeBecas = () => {
         <button
           onClick={() => handleRemoveFilter(filter.type, filter.value)}
           aria-label={`Remover Filtro de ${filter.value}`}
-          className="ml-2 grid place-content-center rounded-sm hover:bg-red-500 transition-all ease-in-out"
+          className="ml-2 focus:bg-red-800 red-button grid place-content-center rounded-sm hover:bg-red-500 transition-all ease-in-out"
         >
           <IoClose className="text-xl" />
         </button>

@@ -14,7 +14,7 @@ const FiltrosAplicados = ({
         {hayFiltrosAplicados && (
           <button
             onClick={() => handleRemoveFilter("Todos")}
-            className="px-2 py-1 float-right h-fit text-sm text-white font-semibold bg-gray-400 rounded-md hover:bg-red-800 transition-all ease-in-out"
+            className="px-2 py-1 float-right h-fit text-sm text-white font-semibold bg-gray-400 rounded-md hover:bg-red-800 focus:bg-red-800 red-button transition-all ease-in-out"
           >
             Borrar Filtros
           </button>
