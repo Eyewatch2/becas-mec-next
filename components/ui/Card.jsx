@@ -48,7 +48,7 @@ const CardIcon = ({ tipo }) => {
     case "Apoyo Económico":
       return (
         <Image
-          role="presentation"
+          role="none"
           width={20}
           height={20}
           src={apoyo_economico}
@@ -58,7 +58,7 @@ const CardIcon = ({ tipo }) => {
     case "Transporte":
       return (
         <Image
-          role="presentation"
+          role="none"
           width={20}
           height={20}
           src={transporte}
@@ -68,7 +68,7 @@ const CardIcon = ({ tipo }) => {
     case "Alojamiento":
       return (
         <Image
-          role="presentation"
+          role="none"
           width={20}
           height={20}
           src={alojamiento}
@@ -78,7 +78,7 @@ const CardIcon = ({ tipo }) => {
     case "Alimentación":
       return (
         <Image
-          role="presentation"
+          role="none"
           width={16}
           height={16}
           src={iconAlimentacion}
@@ -88,7 +88,7 @@ const CardIcon = ({ tipo }) => {
     case "Material de estudio":
       return (
         <Image
-          role="presentation"
+          role="none"
           width={20}
           height={20}
           src={material_de_estudio}
@@ -98,7 +98,7 @@ const CardIcon = ({ tipo }) => {
     case "Otros":
       return (
         <Image
-          role="presentation"
+          role="none"
           width={20}
           height={20}
           src={otros}
@@ -108,7 +108,7 @@ const CardIcon = ({ tipo }) => {
     default:
       return (
         <Image
-          role="presentation"
+          role="none"
           width={20}
           height={20}
           src={todas}
