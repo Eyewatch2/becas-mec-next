@@ -33,18 +33,29 @@ const Footer = () => {
               className="w-8 h-8 grid place-content-center md:hover:scale-110 transition-all ease-in-out bg-white aspect-square rounded-full"
             >
               <span className="sr-only">Enlace a Instagram</span>
-              <FaInstagram className="text-xl"/>
+              <FaInstagram className="text-xl" />
             </Link>
           </li>
         </ul>
       </div>
-      <div className="max-w-screen-lg pb-8  text-sm mx-auto flex flex-col justify-between md:flex-row gap-5">
-        <p className="text-left max-w-screen-md col-span-10 text-white">
-          El Ministerio de Educación y Cultura no se hace responsable de la
-          información presentada. Ante cualquier consulta, contactarse con la
-          institución a cargo de la beca.
-        </p>
-        <Link href={"mailto:erro@becas.edu.uy"} aria-label="Reportar error" className="text-white rounded-xl w-fit self-end py-2 px-4 grid place-content-center hover:bg-red-800 transition bg-red-500">Reportar error</Link>
+      <div className="p-2 text-white text-xs mx-auto flex flex-col justify-between md:flex-row gap-5">
+        <div className="flex flex-col lg:flex-row justify-between max-w-screen-lg mx-auto items-center w-full">
+          <p className="text-left col-span-10 md:w-3/4">
+            El Ministerio de Educación y Cultura no se hace responsable de la
+            información presentada. Ante cualquier consulta, contactarse con la
+            institución a cargo de la beca.
+          </p>
+          <p className=" flex gap-2 items-center">
+            ¿Encontraste un error?{" "}
+            <Link
+              href={"mailto:error@becas.edu.uy"}
+              aria-label="Reportar error"
+              className="underline grid place-content-center hover:text-red-500"
+            >
+              Reportar
+            </Link>
+          </p>
+        </div>
       </div>
     </footer>
   );
