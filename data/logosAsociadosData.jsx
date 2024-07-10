@@ -46,4 +46,9 @@ export const logosAsociados = [
         src: "/images/LOGO_CONGRESOINTENDENTES.png",
         alt: "Logo Congreso Intendentes"
     },
+    {
+        name: "Logo Agencia Nacional de Investigación e Innovación",
+        src: "/images/LOGO_ANII.png",
+        alt: "Logo Agencia Nacional de Investigación e Innovación",
+    },
 ]

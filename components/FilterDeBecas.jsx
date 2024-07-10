@@ -215,7 +215,7 @@ const FilterDeBecas = () => {
         <button
           onClick={() => handleRemoveFilter(filter.type, filter.value)}
           aria-label={`Remover Filtro de ${filter.value}`}
-          className="ml-2 focus:bg-red-800 red-button grid place-content-center rounded-sm hover:bg-red-500 transition-all ease-in-out"
+          className="ml-2 focus:bg-red-800 Fred-button grid place-content-center rounded-sm hover:bg-red-500 transition-all ease-in-out"
         >
           <IoClose className="text-xl" />
         </button>
@@ -258,11 +258,11 @@ const FilterDeBecas = () => {
             <div className="flex p-5 md:p-0 flex-col md:flex-row gap-5 md:gap-2 justify-between items-center">
               <div className="w-full md:w-fit border-green-800">
                 <label>
-                  <span className="sr-only">Fecha de Nacimiento</span>
+                  <span className="sr-only">Fecha de nacimiento</span>
                   <DatePicker
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}
-                    placeholderText="Fecha de nacimiento:"
+                    placeholderText="¿Cuándo naciste?"
                     className="!w-full placeholder:text-green-800 relative border md:text-center cursor-default border-gray-400 md:rounded-none rounded-lg md:border-none md:w-auto px-4 md:pl-4 md:pr-0 bg-transparent py-2 md:rounded-l-full"
                     showYearDropdown
                     dateFormat={"dd/MM/yyyy"}
@@ -275,7 +275,7 @@ const FilterDeBecas = () => {
                 </label>
               </div>
               <span className="hidden md:inline-block border border-green-500 w-0.5 h-8 bg-green-500" />
-              <label for="nivelEducativo" className="sr-only">
+              <label htmlFor="nivelEducativo" className="sr-only">
                 Nivel Educativo
               </label>
               <select
@@ -288,7 +288,7 @@ const FilterDeBecas = () => {
               >
                 {!nivelesLoading ? (
                   <>
-                    <option value={0}>Nivel Educativo</option>
+                    <option value={0}>¿Qué vas a estudiar?</option>
                     {nivelesEducativos &&
                       nivelesEducativos.map((nivel) => (
                         <option key={nivel.id} value={nivel.value}>
@@ -301,7 +301,7 @@ const FilterDeBecas = () => {
                 )}
               </select>
               <span className="hidden md:inline-block border border-green-500 w-0.5 h-8 bg-green-500" />
-              <label for="departamento" className="sr-only">
+              <label htmlFor="departamento" className="sr-only">
                 Departamento
               </label>
               <select
@@ -312,7 +312,7 @@ const FilterDeBecas = () => {
                 name="departamento"
                 className="border !min-w-fit border-gray-400 md:rounded-none rounded-lg md:border-none px-4 bg-transparent py-2 w-full md:w-auto"
               >
-                <option value={0}>Tu Departamento</option>
+                <option value={0}>¿De dónde sos?</option>
                 {todosLosDepartamentosUruguay.map((departamento, index) => (
                   <option key={departamento} value={departamento}>
                     {departamento}
