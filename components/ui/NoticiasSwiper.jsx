@@ -30,20 +30,10 @@ const NoticiasSwiper = () => {
 
   return (
     <div className="w-full px-20 py-6">
-      {noticiasLoading && <p className="text-xl text-white text-center">Cargando noticias...</p>}
+      {noticiasLoading && (
+        <p className="text-xl text-white text-center">Cargando noticias...</p>
+      )}
       <Swiper
-        containerMessage="Noticias"
-        containerRoleDescriptionMessage="Noticias"
-        enabled={true}
-        itemRoleDescriptionMessage="Noticia {{index}} de {{total}}"
-        lastSlideMessage="Última noticia"
-        nextSlideMessage="Siguiente noticia"
-        notificationClass="swiper-notification"
-        paginationBulletMessage="Go to slide {{index}}"
-        prevSlideMessage="Noticia anterior"
-        slideLabelMessage="Noticia {{index}}"
-        slideRoleDescriptionMessage="Noticia"
-        slideRole="group"
         autoplay
         modules={[Navigation]}
         spaceBetween={50}
@@ -60,20 +50,20 @@ const NoticiasSwiper = () => {
           1024: {
             slidesPerView: 3,
             spaceBetween: 30,
-          }
+          },
         }}
       >
-        {noticias.filter(b => b.mostrar).map((noticia) => (
-          <SwiperSlide key={noticia.id} className="p-2">
-            <NoticiaCard
-              img={noticia.imagen}
-              link={noticia.link}
-              title={noticia.titulo}
-            />
-          </SwiperSlide>
-        
-        ))}
-     
+        {noticias
+          .filter((b) => b.mostrar)
+          .map((noticia) => (
+            <SwiperSlide key={noticia.id} className="p-2">
+              <NoticiaCard
+                img={noticia.imagen}
+                link={noticia.link}
+                title={noticia.titulo}
+              />
+            </SwiperSlide>
+          ))}
       </Swiper>
       <button
         aria-label="Siguiente noticia"

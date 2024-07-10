@@ -35,8 +35,8 @@ const LogoSlider = () => {
                                 height={400}
                                 src={logo.src}
                                 alt={logo.alt}
-                                className=" rounded-full object-contain"
-                            />
+                                className="brightness-0 invert rounded-full object-contain"
+                                />
                         </SwiperSlide>
                     ))}
                 </Swiper>

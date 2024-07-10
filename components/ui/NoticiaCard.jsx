@@ -15,7 +15,7 @@ const NoticiaCard = ({ title, img, link }) => {
           className="w-full aspect-square object-cover"
         />
         <div className="py-2 px-3">
-          <h3 className="uppercase min-h-[calc(2em+1rem)] text-left text-white font-bold line-clamp-2">
+          <h3 className="text-sm min-h-[calc(2em+0.5rem)] font-lg text-left text-white font-bold line-clamp-2">
             {title}
           </h3>
         </div>

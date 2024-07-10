@@ -22,7 +22,7 @@ const Footer = () => {
               className="w-8 h-8 grid place-content-center md:hover:scale-110 transition-all ease-in-out bg-white aspect-square rounded-full"
             >
               <span className="sr-only">Enlace a Facebook</span>
-              <FaFacebookF />
+              <FaFacebookF className="text-lg" />
             </Link>
           </li>
           <li>
@@ -33,16 +33,19 @@ const Footer = () => {
               className="w-8 h-8 grid place-content-center md:hover:scale-110 transition-all ease-in-out bg-white aspect-square rounded-full"
             >
               <span className="sr-only">Enlace a Instagram</span>
-              <FaInstagram />
+              <FaInstagram className="text-xl"/>
             </Link>
           </li>
         </ul>
       </div>
-        <p className="max-w-screen-sm text-sm mx-auto pb-8 text-center text-white">
+      <div className="max-w-screen-lg pb-8  text-sm mx-auto flex flex-col justify-between md:flex-row gap-5">
+        <p className="text-left max-w-screen-md col-span-10 text-white">
           El Ministerio de Educación y Cultura no se hace responsable de la
           información presentada. Ante cualquier consulta, contactarse con la
           institución a cargo de la beca.
         </p>
+        <Link href={"mailto:erro@becas.edu.uy"} aria-label="Reportar error" className="text-white rounded-xl w-fit self-end py-2 px-4 grid place-content-center hover:bg-red-800 transition bg-red-500">Reportar error</Link>
+      </div>
     </footer>
   );
 };

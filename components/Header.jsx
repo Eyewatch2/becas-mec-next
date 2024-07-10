@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 import React from "react";
 import Image from "next/image";
@@ -30,7 +30,7 @@ const Header = () => {
                   className="w-8 h-8 grid place-content-center bg-green-500 hover:bg-green-600 transition-colors ease-in-out aspect-square rounded-full"
                 >
                   <span className="sr-only">Enlace a Facebook</span>
-                  <FaFacebookF className="w-full h-full" />
+                  <FaFacebookF className="w-full h-full text-lg" />
                 </Link>
               </li>
 
@@ -42,7 +42,7 @@ const Header = () => {
                   className="w-8 h-8 grid place-content-center bg-green-500 aspect-square hover:bg-green-600 transition-colors ease-in-out rounded-full"
                 >
                   <span className="sr-only">Enlace a Instagram</span>
-                  <FaInstagram className="w-full h-full" />
+                  <FaInstagram className="w-full h-full text-xl" />
                 </Link>
               </li>
             </ul>
