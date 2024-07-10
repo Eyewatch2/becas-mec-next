@@ -38,6 +38,11 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+        <p className="max-w-screen-sm text-sm mx-auto pb-8 text-center text-white">
+          El Ministerio de Educación y Cultura no se hace responsable de la
+          información presentada. Ante cualquier consulta, contactarse con la
+          institución a cargo de la beca.
+        </p>
     </footer>
   );
 };
