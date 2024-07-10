@@ -2,7 +2,7 @@ import NoticiasSwiper from "./ui/NoticiasSwiper";
 const BottomInfoBanner = () => {
   return (
     <section
-      className="max-w-screen-lg overflow-hidden w-full mx-auto px-10 pb-16 relative min-h-[80svh] md:min-h-[60svh] lg:min-h-[80svh] 2xl:min-h-[60svh] bg-cover grid place-content-center bg-center "
+      className="max-w-screen-lg w-full mx-auto px-10 pb-16 relative min-h-[80svh] md:min-h-[60svh] lg:min-h-[80svh] 2xl:min-h-[60svh] bg-cover grid place-content-center bg-center "
       style={{ backgroundImage: `url("/images/FOOTER_IMG.png")` }}
     >
       <div className="absolute inset-0 bg-black opacity-40"></div>

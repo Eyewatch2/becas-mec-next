@@ -20,7 +20,6 @@ const NoticiasSwiper = () => {
         const response = await fetch(`${stables.API_URL}/noticias?limit=1000`);
         const data = await response.json();
         setNoticias(data.docs);
-        console.log(data.docs);
       } catch (error) {
         console.error("Error fetching noticias:", error);
       }
@@ -56,8 +55,12 @@ const NoticiasSwiper = () => {
         breakpoints={{
           768: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 20,
           },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          }
         }}
       >
         {noticias.filter(b => b.mostrar).map((noticia) => (

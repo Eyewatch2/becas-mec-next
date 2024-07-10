@@ -31,13 +31,14 @@ a:not(:active):focus,
 button:not(:active):not(.red-button):focus,
 select:not(:active):focus,
 input:not(:active):focus,
-textarea:not(:active):focus {
-  outline: none;  
+textarea:not(:active):focus,
+article:has(:focus):not(:hover) {
+  outline: none;
   box-shadow: 0 0 0 3px rgb(214, 0, 118);
 }
 
 .red-button:not(:active):focus {
-  outline: none;  
+  outline: none;
   box-shadow: 0 0 0 3px rgb(0, 225, 255);
 }
 
@@ -55,7 +56,7 @@ ul[role="navigation"] li a {
 }
 
 p {
-  line-height: 1.5!important;
+  line-height: 1.5 !important;
 }
 
 .react-datepicker-wrapper {
