@@ -1,3 +1,4 @@
+import { parseJSONToHTML } from "@/utils";
 import Link from "next/link";
 import React from "react";
 
@@ -148,6 +149,17 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
                         }
                       })}
                   </p>{" "}
+                </div>
+              )}
+
+              {becaSeleccionada.extras && (
+                <div className="flex flex-col gap-1 mb-5">
+                  <div
+                    className="flex flex-col gap-1"
+                    dangerouslySetInnerHTML={{
+                      __html: parseJSONToHTML(becaSeleccionada.extras),
+                    }}
+                  />
                 </div>
               )}
             </div>
