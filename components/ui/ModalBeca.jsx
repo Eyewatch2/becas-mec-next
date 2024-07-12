@@ -153,14 +153,12 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
               )}
 
               {becaSeleccionada.extras && (
-                <div className="flex flex-col gap-1 mb-5">
-                  <div
-                    className="flex flex-col gap-1"
-                    dangerouslySetInnerHTML={{
-                      __html: parseJSONToHTML(becaSeleccionada.extras),
-                    }}
-                  />
-                </div>
+                <div
+                className="flex flex-col gap-1 mb-5"
+                dangerouslySetInnerHTML={{
+                  __html: parseJSONToHTML(becaSeleccionada.extras),
+                }}
+              />
               )}
             </div>
             <div className="w-full flex flex-col md:flex-row md:gap-3">
