@@ -13,18 +13,19 @@ import FiltrosAplicados from "./ui/FiltrosAplicados";
 import Link from "next/link";
 
 const getBackgroundImage = (name) => {
-  switch (name) {
-    case "Apoyo Económico":
+  console.log(name);
+  switch (name.toLowerCase()) {
+    case "apoyo económico":
       return "/images/apoyo_economico.png";
-    case "Transporte":
+    case "transporte":
       return "/images/transporte.png";
-    case "Alojamiento":
+    case "alojamiento":
       return "/images/alojamiento.png";
-    case "Alimentación":
+    case "alimentación":
       return "/images/alimentacion.png";
-    case "Material de Estudio":
+    case "material de estudio":
       return "/images/material_de_estudio.png";
-    case "Otros":
+    case "otros":
       return "/images/otros.png";
     default:
       return "/images/todas.png";
@@ -276,7 +277,7 @@ const FilterDeBecas = () => {
               </div>
               <span className="hidden md:inline-block border border-green-500 w-0.5 h-8 bg-green-500" />
               <label htmlFor="nivelEducativo" className="sr-only">
-                Nivel Educativo
+                Nivel educativo
               </label>
               <select
                 id="nivelEducativo"
@@ -349,7 +350,7 @@ const FilterDeBecas = () => {
                   : "border-white"
               }`}
               style={{
-                backgroundImage: `url("${getBackgroundImage(c.nombre)}")`,
+                backgroundImage: `url("${getBackgroundImage(c.nombre.toLowerCase())}")`,
               }}
             >
               <div

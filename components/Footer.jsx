@@ -48,7 +48,7 @@ const Footer = () => {
           <p className=" flex gap-2 items-center">
             ¿Encontraste un error?{" "}
             <Link
-              href={"mailto:error@becas.edu.uy"}
+              href={"mailto:comunicaeducacion@mec.gub.uy"}
               aria-label="Reportar error"
               className="underline grid place-content-center hover:text-red-500"
             >

@@ -30,7 +30,7 @@ const ContenedorBecas = ({ becas, paginaActual, setPaginaActual, loading }) => {
     return (
       <div className="container max-w-screen-lg mx-auto py-16 md:py-16 bg-white flex flex-col gap-5 items-center">
         <h2 className="text-lg uppercase tracking-[0.6rem] font-bold text-green-500">
-          Oops...
+          ¡Ups!
         </h2>
         <p className="text-center w-3/4">
           No se encontraron becas con los filtros seleccionados

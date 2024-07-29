@@ -9,111 +9,99 @@ import transporte from "@/components/ui/svg/transporte.svg";
 import Image from "next/image";
 
 const bgImageClass = {
-  "Apoyo Económico": "/images/apoyo_economico.png",
-  Transporte: "/images/transporte.png",
-  Alojamiento: "/images/alojamiento.png",
-  Alimentación: "/images/alimentacion.png",
-  "Material de estudio": "/images/material_de_estudio.png",
-  Otros: "/images/otros.png",
+  "apoyo económico": "/images/apoyo_economico.png",
+  transporte: "/images/transporte.png",
+  alojamiento: "/images/alojamiento.png",
+  alimentación: "/images/alimentacion.png",
+  "material de estudio": "/images/material_de_estudio.png",
+  otros: "/images/otros.png",
 };
 const tagBgColorClass = {
-  "Apoyo Económico": "bg-amber-900",
-  Transporte: "bg-red-900",
-  Alojamiento: "bg-blue-900",
-  Alimentación: "bg-orange-900",
-  "Material de estudio": "bg-purple-800",
-  Otros: "bg-green-900",
+  "apoyo económico": "bg-amber-900",
+  transporte: "bg-red-900",
+  alojamiento: "bg-blue-900",
+  alimentación: "bg-orange-900",
+  "material de estudio": "bg-purple-800",
+  otros: "bg-green-900",
 };
 
 const textByType = {
-  "Apoyo Económico": "text-yellow-900",
-  Transporte: "text-red-100",
-  Alojamiento: "text-blue-100",
-  Alimentación: "text-orange-900",
-  "Material de estudio": "text-purple-100",
-  Otros: "text-green-100",
+  "apoyo económico": "text-yellow-900",
+  transporte: "text-red-100",
+  alojamiento: "text-blue-100",
+  alimentación: "text-orange-900",
+  "material de estudio": "text-purple-100",
+  otros: "text-green-100",
 };
 
 const bgByType = {
-  "Apoyo Económico": "bg-white",
-  Transporte: "bg-black",
-  Alojamiento: "bg-black",
-  Alimentación: "bg-black",
-  "Material de estudio": "bg-black",
-  Otros: "bg-black",
+  "apoyo económico": "bg-white",
+  transporte: "bg-black",
+  alojamiento: "bg-black",
+  alimentación: "bg-black",
+  "material de estudio": "bg-black",
+  otros: "bg-black",
 };
 
 const CardIcon = ({ tipo }) => {
-  switch (tipo) {
-    case "Apoyo Económico":
+  switch (tipo.toLowerCase()) {
+    case "apoyo económico":
       return (
         <Image
           role="none"
           width={20}
           height={20}
           src={apoyo_economico}
-          alt="Apoyo Económico"
+          alt="apoyo económico"
         />
       );
-    case "Transporte":
+    case "transporte":
       return (
         <Image
           role="none"
           width={20}
           height={20}
           src={transporte}
-          alt="Transporte"
+          alt="transporte"
         />
       );
-    case "Alojamiento":
+    case "alojamiento":
       return (
         <Image
           role="none"
           width={20}
           height={20}
           src={alojamiento}
-          alt="Alojamiento"
+          alt="alojamiento"
         />
       );
-    case "Alimentación":
+    case "alimentación":
       return (
         <Image
           role="none"
           width={16}
           height={16}
           src={iconAlimentacion}
-          alt="Alimentación"
+          alt="alimentación"
         />
       );
-    case "Material de estudio":
+    case "material de estudio":
       return (
         <Image
           role="none"
           width={20}
           height={20}
           src={material_de_estudio}
-          alt="Material de estudio"
+          alt="material de estudio"
         />
       );
-    case "Otros":
+    case "otros":
       return (
-        <Image
-          role="none"
-          width={20}
-          height={20}
-          src={otros}
-          alt="Otros"
-        />
+        <Image role="none" width={20} height={20} src={otros} alt="otros" />
       );
     default:
       return (
-        <Image
-          role="none"
-          width={20}
-          height={20}
-          src={todas}
-          alt="Todas"
-        />
+        <Image role="none" width={20} height={20} src={todas} alt="Todas" />
       );
   }
 };
@@ -137,20 +125,26 @@ const Card = ({ beca, openModal }) => {
       >
         <div className="absolute inset-0 bg-cover bg-center"></div>
         <div
-          className={`absolute text-left z-10 top-0 left-0 p-4  ${textByType[tipo]}`}
+          className={`absolute text-left z-10 top-0 left-0 p-4  ${
+            textByType[tipo.toLowerCase()]
+          }`}
         >
           <h2 className="font-bold text-md md:text-xl">{nombre}</h2>
           <span className="font-light text-xs md:text-base">{institucion}</span>
         </div>
         {estaVigente ? (
           <div
-            className={`text-xs font-bold z-10 absolute bottom-3 right-3 ${tagBgColorClass[tipo]} text-white px-2 py-1 rounded-2xl`}
+            className={`text-xs font-bold z-10 absolute bottom-3 right-3 ${
+              tagBgColorClass[tipo.toLowerCase()]
+            } text-white px-2 py-1 rounded-2xl`}
           >
             ¡Inscribite Hoy!
           </div>
         ) : (
           <div
-            className={`text-xs z-10 absolute bottom-3 right-3 lowercase ${tagBgColorClass[tipo]} text-white px-2 py-1 rounded-2xl`}
+            className={`text-xs z-10 absolute bottom-3 right-3 lowercase ${
+              tagBgColorClass[tipo.toLowerCase()]
+            } text-white px-2 py-1 rounded-2xl`}
           >
             {tipo}
           </div>
@@ -161,9 +155,12 @@ const Card = ({ beca, openModal }) => {
         >
           {CardIcon({ tipo })}
         </div>
+        {tipo}
         <div
           className={`absolute w-full h-full bg-black bg-cover inset-0 bg-gradient-to-t`}
-          style={{ backgroundImage: `url(${bgImageClass[tipo]})` }}
+          style={{
+            backgroundImage: `url(${bgImageClass[tipo.toLowerCase()]})`,
+          }}
         ></div>
       </div>
     </button>

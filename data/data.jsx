@@ -1,82 +1,92 @@
 export const categoriesData = [
-    {
-        nombre: "Todas las Categorías",
-        color: "rojo",
-        foto: "/images/todas.png",
-        info: "Becas para diversas necesidades educativas",
-        tag: "¡Inscripciones Abiertas!"
-    },
-    {
-        nombre: "Apoyo Económico",
-        color: "verde",
-        foto: "/images/apoyo_economico.png",
-        info: "Becas para diversas necesidades educativas",
-        tag: "¡Inscripciones Abiertas!"
-    },
-    {
-        nombre: "Transporte",
-        color: "azul",
-        foto: "/images/transporte.png",
-        info: "Becas para diversas necesidades educativas",
-        tag: "¡Inscripciones Abiertas!"
-    },
-    {
-        nombre: "Alimentación",
-        color: "amarillo",
-        foto: "/images/alimentacion.png",
-        info: "Becas para diversas necesidades educativas",
-        tag: "¡Inscripciones Abiertas!"
-    },
-    {
-        nombre: "Alojamiento",
-        color: "violeta",
-        foto: "/images/alojamiento.png",
-        info: "Becas para diversas necesidades educativas",
-        tag: "¡Inscripciones Abiertas!"
-    },
-    {
-        nombre: "Material de Estudio",
-        color: "naranja",
-        foto: "/images/material_de_estudio.png",
-        info: "Becas para diversas necesidades educativas",
-        tag: "¡Inscripciones Abiertas!"
-    },
-    {
-        nombre: "Otros",
-        color: "gris",
-        foto: "/images/otros.png",
-        info: "Becas para diversas necesidades educativas",
-        tag: "¡Inscripciones Abiertas!"
-    }
-
+  {
+    nombre: "Todas las categorías",
+    color: "rojo",
+    foto: "/images/todas.png",
+    info: "Becas para diversas necesidades educativas",
+    tag: "¡Inscripciones Abiertas!",
+  },
+  {
+    nombre: "Apoyo económico",
+    color: "verde",
+    foto: "/images/apoyo_economico.png",
+    info: "Becas para diversas necesidades educativas",
+    tag: "¡Inscripciones Abiertas!",
+  },
+  {
+    nombre: "Transporte",
+    color: "azul",
+    foto: "/images/transporte.png",
+    info: "Becas para diversas necesidades educativas",
+    tag: "¡Inscripciones Abiertas!",
+  },
+  {
+    nombre: "Alimentación",
+    color: "amarillo",
+    foto: "/images/alimentacion.png",
+    info: "Becas para diversas necesidades educativas",
+    tag: "¡Inscripciones Abiertas!",
+  },
+  {
+    nombre: "Alojamiento",
+    color: "violeta",
+    foto: "/images/alojamiento.png",
+    info: "Becas para diversas necesidades educativas",
+    tag: "¡Inscripciones Abiertas!",
+  },
+  {
+    nombre: "Material de estudio",
+    color: "naranja",
+    foto: "/images/material_de_estudio.png",
+    info: "Becas para diversas necesidades educativas",
+    tag: "¡Inscripciones Abiertas!",
+  },
+  {
+    nombre: "Otros",
+    color: "gris",
+    foto: "/images/otros.png",
+    info: "Becas para diversas necesidades educativas",
+    tag: "¡Inscripciones Abiertas!",
+  },
 ];
 
 export const todosLosDepartamentosUruguay = [
-    "Montevideo",
-    "Artigas",
-    "Canelones",
-    "Cerro Largo",
-    "Colonia",
-    "Durazno",
-    "Flores",
-    "Florida",
-    "Lavalleja",
-    "Maldonado",
-    "Paysandú",
-    "Río Negro",
-    "Rivera",
-    "Rocha",
-    "Salto",
-    "San José",
-    "Soriano",
-    "Tacuarembó",
-    "Treinta y Tres"
+  "Artigas",
+  "Canelones",
+  "Cerro Largo",
+  "Colonia",
+  "Durazno",
+  "Flores",
+  "Florida",
+  "Lavalleja",
+  "Maldonado",
+  "Montevideo",
+  "Paysandú",
+  "Río Negro",
+  "Rivera",
+  "Rocha",
+  "Salto",
+  "San José",
+  "Soriano",
+  "Tacuarembó",
+  "Treinta y Tres",
 ];
 
-export const becasData = [
+export const nivelesEducativos = [
+  "Terciario",
+  "Doctorado",
+  "Educación Media Superior",
+  "Bachillerato",
+  "Posgrado",
+  "Universitario",
+  "Educación Media Básica",
+  "Maestría",
+];
+
+/* export const becasData = [
     {
         institucion: "Administración Nacional de Educación Pública (ANEP)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Consejo de Formación en Educación",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Terciario", "Universitario"],
@@ -87,7 +97,7 @@ export const becasData = [
     },
     {
         institucion: "Administración Nacional de Educación Pública (ANEP)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Julio Castro",
         departamento: [],
         nivelEducativo: [],
@@ -120,7 +130,7 @@ export const becasData = [
     },
     {
         institucion: "Agencia Nacional de Investigación e Innovación (ANII)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Posgrados Nacionales",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Posgrado", "Maestría", "Doctorado"],
@@ -131,7 +141,7 @@ export const becasData = [
     },
     {
         institucion: "Agencia Nacional de Investigación e Innovación (ANII)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Maestrías en el Exterior",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Posgrado", "Maestría", "Doctorado"],
@@ -142,7 +152,7 @@ export const becasData = [
     },
     {
         institucion: "Agencia Nacional de Investigación e Innovación (ANII)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Doctorados en el exterior",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Posgrado", "Maestría", "Doctorado"],
@@ -153,7 +163,7 @@ export const becasData = [
     },
     {
         institucion: "Agencia Nacional de Investigación e Innovación (ANII)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "ANII-Chevening (Reino Unido)",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Posgrado", "Maestría", "Doctorado"],
@@ -164,7 +174,7 @@ export const becasData = [
     },
     {
         institucion: "Agencia Nacional de Investigación e Innovación (ANII)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "ANII-Fulbright (EEUU)",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Posgrado", "Maestría", "Doctorado"],
@@ -175,7 +185,7 @@ export const becasData = [
     },
     {
         institucion: "Agencia Nacional de Investigación e Innovación (ANII)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Posdoctorados nacionales",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Posgrado", "Maestría", "Doctorado"],
@@ -186,7 +196,7 @@ export const becasData = [
     },
     {
         institucion: "Agencia Nacional de Investigación e Innovación (ANII)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Movilidades",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Posgrado", "Maestría", "Doctorado"],
@@ -197,7 +207,7 @@ export const becasData = [
     },
     {
         institucion: "Dirección Nacional de Educación (MEC)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Butiá",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Educación Media Superior", "Educación Media Básica"],
@@ -208,7 +218,7 @@ export const becasData = [
     },
     {
         institucion: "Dirección Nacional de Educación (MEC)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Carlos Quijano",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Posgrado", "Maestría", "Doctorado"],
@@ -219,7 +229,7 @@ export const becasData = [
     },
     {
         institucion: "Dirección Nacional de Educación (MEC)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Docente Acreditado",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Terciario", "Universitario"],
@@ -230,7 +240,7 @@ export const becasData = [
     },
     {
         institucion: "Fondo de Solidaridad",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Fondo de Solidaridad",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Terciario", "Universitario"],
@@ -241,7 +251,7 @@ export const becasData = [
     },
     {
         institucion: "Instituto Nacional de Empleo y Formación Profesional (INEFOP)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Programa Bachilleres",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Educación Media Superior", "Bachillerato"],
@@ -252,7 +262,7 @@ export const becasData = [
     },
     {
         institucion: "Instituto Nacional de la Juventud (MIDES)",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "INJU Avanza (Inclusión educativa)",
         departamento: ["Montevideo", "Artigas", "Canelones", "Cerro Largo", "Rivera", "Salto", "Tacuarembó"],
         nivelEducativo: ["Educación Media Básica"],
@@ -285,7 +295,7 @@ export const becasData = [
     },
     {
         institucion: "Intendencia de Durazno",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: null,
         departamento: ["Durazno"],
         nivelEducativo: ["Educación Media Superior", "Educación Media Básica", "Terciario"],
@@ -318,7 +328,7 @@ export const becasData = [
     },
     {
         institucion: "Intendencia de Florida",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: null,
         departamento: ["Florida"],
         nivelEducativo: ["Educación Media Superior", "Educación Media Básica"],
@@ -340,7 +350,7 @@ export const becasData = [
     },
     {
         institucion: "Intendencia de Paysandú",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Programa +Talentos",
         departamento: ["Paysandú"],
         nivelEducativo: ["Educación Media Superior", "Bachillerato"],
@@ -362,7 +372,7 @@ export const becasData = [
     },
     {
         institucion: "Intendencia de Rocha",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Fondo de Solidaridad Municipal",
         departamento: ["Rocha"],
         nivelEducativo: ["Educación Media Superior", "Educación Media Básica"],
@@ -373,7 +383,7 @@ export const becasData = [
     },
     {
         institucion: "Universidad de la República",
-        tipo: "Apoyo Económico",
+        tipo: "Apoyo económico",
         nombre: "Bienestar Universitario",
         departamento: todosLosDepartamentosUruguay,
         nivelEducativo: ["Terciario", "Universitario"],
@@ -452,15 +462,4 @@ export const becasData = [
 
 
 
-];
-
-export const nivelesEducativos = [
-    "Terciario",
-    "Doctorado",
-    "Educación Media Superior",
-    "Bachillerato",
-    "Posgrado",
-    "Universitario",
-    "Educación Media Básica",
-    "Maestría"
-];
+]; */

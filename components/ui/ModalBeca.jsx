@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const tagBgColorClass = {
-  "Apoyo Económico": "bg-amber-600",
+  "Apoyo económico": "bg-amber-600",
   Transporte: "bg-red-600",
   Alojamiento: "bg-blue-600",
   Alimentación: "bg-orange-600",
@@ -61,10 +61,10 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
                 </div>
 
                 <h4 className="text-md font-bold flex flex-wrap gap-2 items-center">
-                  Nivel Educativo Requerido:
+                  Nivel educativo Requerido:
                   {!becaSeleccionada.nivel_educativo && (
                     <span className="flex items-center w-fit md:w-auto bg-green-500 rounded-md px-2 py-1 text-xxs md:text-xs font-semibold text-white">
-                      Cualquier Nivel Educativo
+                      Cualquier Nivel educativo
                     </span>
                   )}
                   {becaSeleccionada.nivel_educativo?.map((nivel) => (
