@@ -30,8 +30,8 @@ const LogoSlider = () => {
             <SwiperSlide
               key={logo.name}
               className={` ${
-                logo.double ? "min-w-[64.5%] md:min-w-[calc(50%-30px)]" : "w-full"
-              } `}
+                logo.double ? "min-w-[64.5%] md:min-w-[50%] p-5" : "w-full "
+              }`}
             >
               <Image
                 width={logo.double ? 800 : 400}
