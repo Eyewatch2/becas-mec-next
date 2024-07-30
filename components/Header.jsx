@@ -23,7 +23,7 @@ const Header = () => {
             <ul className="flex gap-2 text-white">
               <li>
                 <Link
-                  href="https://www.facebook.com/MecUru/"
+                  href="https://www.facebook.com/profile.php?id=61552689193399"
                   target="_blank"
                   aria-label="Enlace a Facebook en otra ventana"
                   rel="noreferrer noopener"

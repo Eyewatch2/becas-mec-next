@@ -1,13 +1,9 @@
 export const logosAsociados = [
   {
-    name: "Logo MEC",
-    src: "/images/LOGO_MEC.png",
-    alt: "Logo Ministerio de Educación y Cultura",
-  },
-  {
-    name: "Logo DIRECCIONNACIONAL",
-    src: "/images/LOGO_DIRECCIONNACIONAL.png",
-    alt: "Logo Dirección Nacional de Educación",
+    name: "Logo MEC y Dirección Nacional de Educación",
+    src: "/images/LOGO_MEC_Y_DIRECCIONNACIONAL.png",
+    alt: "Logo del Ministerio de Educación y Cultura junto con Logo de la Dirección Nacional de Educación",
+    double: true,
   },
   {
     name: "Logo MIDES",

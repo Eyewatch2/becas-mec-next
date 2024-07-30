@@ -16,7 +16,7 @@ const Footer = () => {
         <ul className="footer-links flex gap-4">
           <li>
             <Link
-              href="https://www.facebook.com/MecUru/"
+              href="https://www.facebook.com/profile.php?id=61552689193399"
               target="_blank"
               aria-label="Enlace a Facebook en otra ventana"
               className="w-8 h-8 grid place-content-center md:hover:scale-110 transition-all ease-in-out bg-white aspect-square rounded-full"
