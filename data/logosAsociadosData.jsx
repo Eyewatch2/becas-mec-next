@@ -5,15 +5,12 @@ export const logosAsociados = [
     alt: "Logo del Ministerio de Educación y Cultura junto con Logo de la Dirección Nacional de Educación",
     double: true,
   },
+
   {
-    name: "Logo MIDES",
-    src: "/images/LOGO_MIDES.png",
-    alt: "Logo Ministerio de Desarrollo Social",
-  },
-  {
-    name: "Logo INJU",
+    name: "Logo INJU y MIDES",
     src: "/images/LOGO_INJU.png",
-    alt: "Logo INJU",
+    alt: "Logo INJU y MIDES",
+    double: true,
   },
   {
     name: "Logo ANEP",

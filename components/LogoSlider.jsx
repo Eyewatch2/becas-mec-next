@@ -29,7 +29,7 @@ const LogoSlider = () => {
           {logosAsociados.map((logo) => (
             <SwiperSlide
               key={logo.name}
-              className={` ${
+              className={`self-center ${
                 logo.double ? "min-w-[64.5%] md:min-w-[50%] p-5" : "w-full "
               }`}
             >
