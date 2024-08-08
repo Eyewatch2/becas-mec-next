@@ -62,3 +62,8 @@ p {
 .react-datepicker-wrapper {
   width: 100%;
 }
+
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d3d3d3 #f5f5f5;
+}

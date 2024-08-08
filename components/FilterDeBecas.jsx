@@ -4,33 +4,13 @@ import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import es from "date-fns/locale/es";
-import { todosLosDepartamentosUruguay, categoriesData } from "@/data/data";
+import { todosLosDepartamentosUruguay } from "@/data/data";
 import ContenedorBecas from "./ui/ContenedorBecas";
 import { IoClose } from "react-icons/io5";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { stables } from "@/stables/stables";
 import FiltrosAplicados from "./ui/FiltrosAplicados";
 import Link from "next/link";
-
-const getBackgroundImage = (name) => {
-  console.log(name);
-  switch (name.toLowerCase()) {
-    case "apoyo económico":
-      return "/images/apoyo_economico.png";
-    case "transporte":
-      return "/images/transporte.png";
-    case "alojamiento":
-      return "/images/alojamiento.png";
-    case "alimentación":
-      return "/images/alimentacion.png";
-    case "material de estudio":
-      return "/images/material_de_estudio.png";
-    case "otros":
-      return "/images/otros.png";
-    default:
-      return "/images/todas.png";
-  }
-};
 
 const FilterDeBecas = () => {
   const [paginaActual, setPaginaActual] = useState(1);
@@ -45,6 +25,7 @@ const FilterDeBecas = () => {
   const [becasLoading, setBecasLoading] = useState(true);
   const [nivelesEducativos, setNivelesEducativos] = useState([]);
   const [nivelesLoading, setNivelesLoading] = useState(true);
+  const [categoriesData, setCategoriesData] = useState([]);
 
   useEffect(() => {
     const fetchBecas = async () => {
@@ -55,6 +36,18 @@ const FilterDeBecas = () => {
         setBecasData(data.docs);
       } catch (error) {
         console.error("Error fetching becas:", error);
+      }
+      setBecasLoading(false);
+    };
+
+    const fetchCategories = async () => {
+      setBecasLoading(true);
+      try {
+        const response = await fetch(`${stables.API_URL}/tiposBeca?limit=1000`);
+        const data = await response.json();
+        setCategoriesData(data.docs);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
       }
       setBecasLoading(false);
     };
@@ -75,6 +68,7 @@ const FilterDeBecas = () => {
 
     fetchBecas();
     fetchNivelesEducativos();
+    fetchCategories();
   }, []);
 
   const today = useMemo(() => new Date(), []);
@@ -110,8 +104,8 @@ const FilterDeBecas = () => {
       }
       if (
         selectedCategories.length > 0 &&
-        !selectedCategories.some(
-          (cat) => cat.toLocaleLowerCase() === beca.tipo.toLocaleLowerCase()
+        !selectedCategories.some((cat) =>
+          beca.tipo.some((tipo) => cat === tipo.id)
         )
       ) {
         if (selectedCategories.includes("Todas las Categorías")) return true;
@@ -187,15 +181,24 @@ const FilterDeBecas = () => {
     const filters = [];
 
     if (nivelEducativo !== "0") {
-      filters.push({ type: "Nivel Educativo", value: nivelEducativo });
+      filters.push({
+        type: "Nivel Educativo",
+        value: nivelEducativo,
+        label: nivelEducativo,
+      });
     }
     if (departamento !== "0") {
-      filters.push({ type: "Departamento", value: departamento });
+      filters.push({
+        type: "Departamento",
+        value: departamento,
+        label: departamento,
+      });
     }
     if (startDate) {
       filters.push({
         type: "Fecha de Nacimiento",
         value: calcularEdad(startDate) + " años",
+        label: calcularEdad(startDate) + " años",
       });
     }
     if (
@@ -203,25 +206,29 @@ const FilterDeBecas = () => {
       selectedCategories[0] !== categoriesData[0].nombre
     ) {
       selectedCategories.forEach((category) => {
-        filters.push({ type: "Categoría", value: category });
+        const label = categoriesData?.find((cat) => cat.id === category).nombre;
+
+        filters.push({ type: "Categoría", value: category, label: label });
       });
     }
 
-    return filters.map((filter, index) => (
-      <span
-        key={index}
-        className="flex items-center bg-green-500 rounded-md pl-3 pr-2 py-1 text-sm font-semibold text-white mr-2 mb-2"
-      >
-        {filter.value}
-        <button
-          onClick={() => handleRemoveFilter(filter.type, filter.value)}
-          aria-label={`Remover Filtro de ${filter.value}`}
-          className="ml-2 focus:bg-red-800 Fred-button grid place-content-center rounded-sm hover:bg-red-500 transition-all ease-in-out"
+    return filters.map((filter, index) => {
+      return (
+        <span
+          key={index}
+          className="flex items-center bg-green-500 rounded-md pl-3 pr-2 py-1 text-sm font-semibold text-white mr-2 mb-2"
         >
-          <IoClose className="text-xl" />
-        </button>
-      </span>
-    ));
+          {filter.label}
+          <button
+            onClick={() => handleRemoveFilter(filter.type, filter.value)}
+            aria-label={`Remover Filtro de ${filter.value}`}
+            className="ml-2 focus:bg-red-800 Fred-button grid place-content-center rounded-sm hover:bg-red-500 transition-all ease-in-out"
+          >
+            <IoClose className="text-xl" />
+          </button>
+        </span>
+      );
+    });
   };
 
   const hayFiltrosAplicados =
@@ -232,7 +239,7 @@ const FilterDeBecas = () => {
       selectedCategories[0] !== categoriesData[0].nombre);
 
   const toggleCategory = (category) => {
-    if (category === categoriesData[0].nombre) {
+    if (category === "Todas las Categorías") {
       setSelectedCategories([]);
       return;
     }
@@ -314,7 +321,7 @@ const FilterDeBecas = () => {
                 className="border !min-w-fit border-gray-400 md:rounded-none rounded-lg md:border-none px-4 bg-transparent py-2 w-full md:w-auto"
               >
                 <option value={0}>¿De dónde sos?</option>
-                {todosLosDepartamentosUruguay.map((departamento, index) => (
+                {todosLosDepartamentosUruguay.map((departamento) => (
                   <option key={departamento} value={departamento}>
                     {departamento}
                   </option>
@@ -334,36 +341,68 @@ const FilterDeBecas = () => {
       </div>
       <div className="max-w-screen-lg mx-auto bg-white md:px-10">
         <div className="flex flex-wrap gap-2 md:gap-5 pb-5 justify-center">
-          {categoriesData.map((c, index) => (
-            <button
-              key={index}
-              onClick={() => toggleCategory(c.nombre)}
-              className={`relative ${
-                index < 3 ? "md:w-[calc(33%-0.7rem)]" : "md:w-[calc(25%-1rem)]"
-              } ${
-                index === 0 ? "w-[calc(100%-1.5rem)]" : "w-[calc(50%-1rem)]"
-              } md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2 bg-cover ${
-                selectedCategories.includes(c.nombre)
-                  ? "border-green-500 text-white/60"
-                  : selectedCategories.length === 0 && index === 0
-                  ? "border-green-500"
-                  : "border-white"
+          <button
+            key={"Todas las Categorías"}
+            onClick={() => toggleCategory("Todas las Categorías")}
+            className={`relative 
+                  ${
+                    categoriesData.length % 2 === 0
+                      ? "md:w-[calc(33%-0.7rem)]"
+                      : "md:w-[calc(25%-1rem)]"
+                  } w-[calc(100%-1.5rem)]
+                md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2 bg-cover ${
+                  selectedCategories.length === 0 && "border-green-500"
+                }`}
+            style={{
+              backgroundImage: `url("/images/todas.png")`,
+            }}
+          >
+            <div
+              className={`absolute inset-0 ${
+                selectedCategories.length === 0
+                  ? "bg-green-800/60"
+                  : "bg-black/20"
+              }  rounded-lg`}
+            ></div>
+            <span
+              className={`z-10 ${
+                selectedCategories.length === 0 ? "text-white/60" : "text-white"
               }`}
-              style={{
-                backgroundImage: `url("${getBackgroundImage(c.nombre.toLowerCase())}")`,
-              }}
             >
-              <div
-                className={`absolute inset-0 ${
-                  selectedCategories.includes(c.nombre) ||
-                  (selectedCategories.length === 0 && index === 0)
-                    ? "bg-green-800/60"
-                    : "bg-black/20"
-                }  rounded-lg`}
-              ></div>
-              <span className="z-10">{c.nombre}</span>
-            </button>
-          ))}
+              Todas las categorías
+            </span>
+          </button>
+          {categoriesData.map((c, index) => {
+            return (
+              <button
+                key={index}
+                onClick={() => toggleCategory(c.id)}
+                className={`relative ${
+                  index < 2 && categoriesData.length % 2 === 0
+                    ? "md:w-[calc(33%-0.7rem)]"
+                    : "md:w-[calc(25%-1rem)]"
+                } ${
+                  index === 0 ? "w-[calc(100%-1.5rem)]" : "w-[calc(50%-1rem)]"
+                } md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2 bg-cover ${
+                  selectedCategories.includes(c.id)
+                    ? "border-green-500 text-white/60"
+                    : "border-white"
+                }`}
+                style={{
+                  backgroundImage: `url("${stables.BASE_URL}${c.imagen_fondo.filename}")`,
+                }}
+              >
+                <div
+                  className={`absolute inset-0 ${
+                    selectedCategories.includes(c.id)
+                      ? "bg-green-800/60"
+                      : "bg-black/20"
+                  }  rounded-lg`}
+                ></div>
+                <span className="z-10">{c.nombre}</span>
+              </button>
+            );
+          })}
         </div>
 
         <FiltrosAplicados

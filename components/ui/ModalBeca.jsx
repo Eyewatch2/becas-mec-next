@@ -2,16 +2,9 @@ import { parseJSONToHTML } from "@/utils";
 import Link from "next/link";
 import React from "react";
 
-const tagBgColorClass = {
-  "Apoyo económico": "bg-amber-600",
-  Transporte: "bg-red-600",
-  Alojamiento: "bg-blue-600",
-  Alimentación: "bg-orange-600",
-  "Material de estudio": "bg-purple-700",
-  Otros: "bg-green-600",
-};
-
 const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
+  console.log("beca selecc  ", becaSeleccionada);
+
   const hayRequisitosDeEdad =
     becaSeleccionada.edad_max || becaSeleccionada.edad_min;
   const hayFechasDePostulacion =
@@ -19,7 +12,7 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
 
   const fechaInicio = new Date(becaSeleccionada.inicio_postulacion);
   const fechaFin = new Date(becaSeleccionada.fin_postulacion);
-  const opcionesDeFecha = { day: "numeric", month: "long", year: "numeric" };
+  const opcionesDeFecha = { month: "long", year: "numeric" };
   const fechaInicioFormateada = fechaInicio.toLocaleDateString(
     "es-UY",
     opcionesDeFecha
@@ -36,7 +29,7 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="bg-white p-5 rounded-xl w-11/12 md:w-1/2"
+            className="bg-white p-5 scrollbar max-h-[90svh] overflow-y-auto rounded-xl w-11/12 md:w-1/2"
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-center text-lg uppercase tracking-[0.6rem] font-bold text-green-500">
@@ -50,13 +43,15 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
                   </h3>
                   <h4 className="text-md font-bold flex-wrap flex gap-2 items-center">
                     Categoría:{" "}
-                    <span
-                      className={`text-xxs capitalize md:text-xs h-fit flex justify-center items-center w-fit z-10 ${
-                        tagBgColorClass[becaSeleccionada.tipo]
-                      } text-white px-2 py-1 rounded-md`}
-                    >
-                      {becaSeleccionada.tipo}
-                    </span>
+                    {becaSeleccionada.tipo.map((tipo) => (
+                      <span
+                        key={tipo.id}
+                        className={`text-xxs capitalize text-white md:text-xs h-fit flex justify-center items-center w-fit z-10 px-2 py-1 rounded-md`}
+                        style={{ backgroundColor: tipo.color }}
+                      >
+                        {tipo.nombre}
+                      </span>
+                    ))}
                   </h4>
                 </div>
 
@@ -118,7 +113,7 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
                 </div>
               )}
               {becaSeleccionada.observaciones && (
-                <div className="flex flex-col gap-1 mb-5">
+                <div className="flex flex-col gap-1">
                   <h4 className="text-lg font-bold">Observaciones:</h4>
                   <p className="text-sm">
                     {becaSeleccionada.observaciones
@@ -154,11 +149,11 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
 
               {becaSeleccionada.extras && (
                 <div
-                className="flex flex-col gap-1 mb-5"
-                dangerouslySetInnerHTML={{
-                  __html: parseJSONToHTML(becaSeleccionada.extras),
-                }}
-              />
+                  className="flex flex-col gap-1 mb-5"
+                  dangerouslySetInnerHTML={{
+                    __html: parseJSONToHTML(becaSeleccionada.extras),
+                  }}
+                />
               )}
             </div>
             <div className="w-full flex flex-col md:flex-row md:gap-3">

@@ -21,6 +21,8 @@ const ContenedorBecas = ({ becas, paginaActual, setPaginaActual, loading }) => {
 
   const openModal = (beca) => {
     setIsModalOpen(true);
+    console.log("beca", beca);
+
     setBecaSeleccionada(beca);
   };
 
@@ -28,7 +30,10 @@ const ContenedorBecas = ({ becas, paginaActual, setPaginaActual, loading }) => {
 
   if (becas.length === 0 && !loading)
     return (
-      <div className="container max-w-screen-lg mx-auto py-16 md:py-16 bg-white flex flex-col gap-5 items-center">
+      <div
+        id="becasEncontradas"
+        className="container max-w-screen-lg mx-auto py-16 md:py-16 bg-white flex flex-col gap-5 items-center"
+      >
         <h2 className="text-lg uppercase tracking-[0.6rem] font-bold text-green-500">
           ¡Ups!
         </h2>
