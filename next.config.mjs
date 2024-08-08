@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['localhost', 'becas.up.railway.app'],
     remotePatterns: [
       {
         protocol: "https",
