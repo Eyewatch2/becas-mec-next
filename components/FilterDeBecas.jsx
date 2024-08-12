@@ -372,37 +372,39 @@ const FilterDeBecas = () => {
               Todas las categorías
             </span>
           </button>
-          {categoriesData.map((c, index) => {
-            return (
-              <button
-                key={index}
-                onClick={() => toggleCategory(c.id)}
-                className={`relative ${
-                  index < 2 && categoriesData.length % 2 === 0
-                    ? "md:w-[calc(33%-0.7rem)]"
-                    : "md:w-[calc(25%-1rem)]"
-                } ${
-                  index === 0 ? "w-[calc(100%-1.5rem)]" : "w-[calc(50%-1rem)]"
-                } md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2 bg-cover ${
-                  selectedCategories.includes(c.id)
-                    ? "border-green-500 text-white/60"
-                    : "border-white"
-                }`}
-                style={{
-                  backgroundImage: `url("${stables.BASE_URL}${c.imagen_fondo.filename}")`,
-                }}
-              >
-                <div
-                  className={`absolute inset-0 ${
+          {categoriesData
+            .sort((a, b) => a.nombre.localeCompare(b.nombre))
+            .map((c, index) => {
+              return (
+                <button
+                  key={index}
+                  onClick={() => toggleCategory(c.id)}
+                  className={`relative ${
+                    index < 2 && categoriesData.length % 2 === 0
+                      ? "md:w-[calc(33%-0.7rem)]"
+                      : "md:w-[calc(25%-1rem)]"
+                  } ${
+                    index === 0 ? "w-[calc(100%-1.5rem)]" : "w-[calc(50%-1rem)]"
+                  } md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2 bg-cover ${
                     selectedCategories.includes(c.id)
-                      ? "bg-green-800/60"
-                      : "bg-black/20"
-                  }  rounded-lg`}
-                ></div>
-                <span className="z-10">{c.nombre}</span>
-              </button>
-            );
-          })}
+                      ? "border-green-500 text-white/60"
+                      : "border-white"
+                  }`}
+                  style={{
+                    backgroundImage: `url("${stables.BASE_URL}${c.imagen_fondo.filename}")`,
+                  }}
+                >
+                  <div
+                    className={`absolute inset-0 ${
+                      selectedCategories.includes(c.id)
+                        ? "bg-green-800/60"
+                        : "bg-black/20"
+                    }  rounded-lg`}
+                  ></div>
+                  <span className="z-10">{c.nombre}</span>
+                </button>
+              );
+            })}
         </div>
 
         <FiltrosAplicados
