@@ -38,7 +38,7 @@ const ActiveBecasModal = () => {
 
       return () => clearTimeout(timeoutId);
     }
-  }, [today]);
+  }, [today, configLoading]);
 
   const month = today.toLocaleString("default", { month: "long" });
 
