@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { stables } from "@/stables/stables";
 
-
 const Card = ({ beca, openModal }) => {
   const { nombre, institucion, tipo, inicio_postulacion, fin_postulacion } =
     beca;
@@ -34,24 +33,24 @@ const Card = ({ beca, openModal }) => {
           style={{ backgroundImage: `url(${imagenFondoUrl})` }}
         ></div>
         <div
-          className={`absolute text-left z-10 top-0 left-0 p-4`}
+          className={`absolute flex flex-col md:gap-2 text-left z-10 top-0 left-0 p-4`}
           style={{ color: tipoData.textColor ? tipoData.textColor : "#FFFFFF" }}
         >
-          <h2 className="font-bold text-md md:text-xl">{nombre}</h2>
+          <h2 className="font-bold text-md md:text-xl line-clamp-3 md:line-clamp-4">{nombre}</h2>
           <span className="font-light text-xs md:text-base">{institucion}</span>
         </div>
         {estaVigente ? (
           <div
-            className={`text-xs font-bold z-10 absolute bottom-3 right-3 px-2 py-1 rounded-2xl`}
+            className={`text-xs text-white font-bold z-10 absolute bottom-3 right-3 px-2 py-1 rounded-2xl`}
             style={{ backgroundColor: tipoData.color }}
           >
             ¡Inscribite Hoy!
           </div>
         ) : (
           <div
-            className={`text-xs gap-1 flex flex-col z-10 absolute bottom-3 right-3 text-white`}
+            className={`text-xs gap-1 flex z-10 absolute bottom-3 right-3 text-white`}
           >
-            {tipo.map((t) => (
+            {tipo.slice(0, 1).map((t) => (
               <div
                 key={t.id}
                 className=" lowercase px-2 py-1 rounded-2xl"
@@ -60,11 +59,19 @@ const Card = ({ beca, openModal }) => {
                 {t.nombre}
               </div>
             ))}
+            {tipo.length > 2 && (
+              <div
+                className="lowercase px-3 py-1 rounded-2xl"
+                style={{ backgroundColor: tipoData.color }}
+              >
+                {`+${tipo.length - 1}`}
+              </div>
+            )}
           </div>
         )}
 
         <div
-          className={`text-xs z-10 absolute bottom-3 left-3 text-white px-2 py-1 rounded-2xl`}
+          className={`text-xs z-10 grid place-content-center pl-2 pb-1 absolute bottom-3 left-3 text-white rounded-2xl`}
         >
           {tipoData.icono && (
             <Image
@@ -72,6 +79,9 @@ const Card = ({ beca, openModal }) => {
               width={tipoData.icono.width}
               height={tipoData.icono.height}
               alt={`${tipoData.nombre} icon`}
+              className={`max-h-[24px] md:max-h-[30px] ${
+                nombre.length > 40 && "hidden md:block"
+              }`}
             />
           )}
         </div>
