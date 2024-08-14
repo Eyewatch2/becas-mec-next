@@ -340,16 +340,14 @@ const FilterDeBecas = () => {
         </div>
       </div>
       <div className="max-w-screen-lg mx-auto bg-white md:px-10">
-        <div className="flex flex-wrap gap-2 md:gap-5 pb-5 justify-center">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-2 md:gap-5 px-2 pb-5 justify-center">
           <button
-            key={"Todas las Categorías"}
             onClick={() => toggleCategory("Todas las Categorías")}
-            className={`relative 
-                  ${
-                    categoriesData.length % 2 === 0
-                      ? "md:w-[calc(33%-0.7rem)]"
-                      : "md:w-[calc(25%-1rem)]"
-                  } w-[calc(100%-1.5rem)]
+            className={`relative  ${
+              categoriesData.length % 2 ? "col-span-1" : "col-span-2 "
+            }	
+                  w-full
+                  md:col-span-4
                 md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2 bg-cover ${
                   selectedCategories.length === 0 && "border-green-500"
                 }`}
@@ -372,6 +370,16 @@ const FilterDeBecas = () => {
               Todas las categorías
             </span>
           </button>
+          {becasLoading &&
+            Array.from({ length: 5 }).map((_, i) => (
+              <div
+                key={i}
+                className={`bg-slate-500 ${
+                  i === 4 ? "hidden md:block" : ""
+                } rounded-lg col-span-1 md:col-span-4 w-full h-16 md:h-20 animate-pulse`}
+              ></div>
+            ))}
+
           {categoriesData
             .sort((a, b) => a.nombre.localeCompare(b.nombre))
             .map((c, index) => {
@@ -380,11 +388,13 @@ const FilterDeBecas = () => {
                   key={index}
                   onClick={() => toggleCategory(c.id)}
                   className={`relative ${
-                    index < 2 && categoriesData.length % 2 === 0
-                      ? "md:w-[calc(33%-0.7rem)]"
-                      : "md:w-[calc(25%-1rem)]"
-                  } ${
-                    index === 0 ? "w-[calc(100%-1.5rem)]" : "w-[calc(50%-1rem)]"
+                    categoriesData.length % 2
+                      ? "col-span-1 md:col-span-4"
+                      : `${
+                          index > 1
+                            ? "col-span-1 md:col-span-3"
+                            : "md:col-span-4 col-span-1"
+                        }`
                   } md:hover:scale-110 ease-in-out transition-all grid place-content-center text-white font-semibold h-16 md:h-20 rounded-xl border-2 bg-cover ${
                     selectedCategories.includes(c.id)
                       ? "border-green-500 text-white/60"

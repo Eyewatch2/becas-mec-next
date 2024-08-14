@@ -9,7 +9,7 @@ const FiltrosAplicados = ({
   return (
     <div className={className}>
       <div className={`flex pr-1 items-center mb-4 justify-between`}>
-        <span className={`p-2 font-bold`}>Filtros aplicados:</span>
+        <span className={`py-2 font-bold`}>Filtros aplicados:</span>
 
         {hayFiltrosAplicados && (
           <button
@@ -22,7 +22,7 @@ const FiltrosAplicados = ({
       </div>
       <div>
         <div
-          className={`flex px-1 items-baseline justify-start flex-1 gap-2 order-2 md:order-1 ${
+          className={`flex items-baseline justify-start flex-1 gap-2 order-2 md:order-1 ${
             hayFiltrosAplicados ? "w-full md:w-auto" : "w-auto"
           }`}
         >
