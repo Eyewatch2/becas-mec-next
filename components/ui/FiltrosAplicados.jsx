@@ -29,7 +29,7 @@ const FiltrosAplicados = ({
           {hayFiltrosAplicados ? (
             <div className="flex flex-wrap gap-2">{renderAppliedFilters()}</div>
           ) : (
-            <span className="text-green-800">Ningún filtro.</span>
+            <span className="text-green-800">Ningún filtro</span>
           )}
         </div>
       </div>

@@ -9,7 +9,7 @@ const BottomInfoBanner = () => {
 
       <div className="absolute inset-0 w-full z-10 text-center justify-center md:text-right flex flex-col gap-8 items-center">
         <h2 className="text-3xl text-center md:text-5xl w-[calc(100%-1.25rem)] font-extrabold text-white">
-          ¡Últimas noticias!
+          Últimas noticias
         </h2>
         <NoticiasSwiper />
       </div>

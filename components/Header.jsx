@@ -11,7 +11,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           <div className="logo">
             <Image
-              className="w-1/2"
+              className="w-full md:w-1/2"
               width={168}
               height={90}
               src={"/images/LOGO_BECA1.png"}

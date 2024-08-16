@@ -12,14 +12,18 @@ const Card = ({ beca, openModal }) => {
   const estaVigente = fechaActual >= fechaInicio && fechaActual <= fechaFin;
 
   const tipoData = tipo[0] || [];
+  const hasMultipleTypes = tipo.length > 1;
 
-  const imagenFondoUrl = tipoData.imagen_fondo?.filename
-    ? `${stables.BASE_URL}${tipoData.imagen_fondo.filename}`
-    : "";
+  const imagenFondoUrl =
+    !hasMultipleTypes && tipoData.imagen_fondo?.filename
+      ? `${stables.BASE_URL}${tipoData.imagen_fondo.filename}`
+      : "/images/otros.png";
 
-  const iconoUrl = tipoData.icono?.filename
-    ? `${stables.BASE_URL}${tipoData.icono.filename}`
-    : "";
+  const iconoUrl =
+    !hasMultipleTypes && tipoData.icono?.filename
+      ? `${stables.BASE_URL}${tipoData.icono.filename}`
+      : "/svg/otros.svg";
+
   return (
     <button
       onClick={() => openModal(beca)}
@@ -34,15 +38,25 @@ const Card = ({ beca, openModal }) => {
         ></div>
         <div
           className={`absolute flex flex-col md:gap-2 text-left z-10 top-0 left-0 p-4`}
-          style={{ color: tipoData.textColor ? tipoData.textColor : "#FFFFFF" }}
+          style={{
+            color: hasMultipleTypes
+              ? "#f0fdfa"
+              : tipoData.textColor
+              ? tipoData.textColor
+              : "#FFFFFF",
+          }}
         >
-          <h2 className="font-bold text-md md:text-xl line-clamp-3 md:line-clamp-4">{nombre}</h2>
+          <h2 className="font-bold text-md md:text-xl line-clamp-3 md:line-clamp-4">
+            {nombre}
+          </h2>
           <span className="font-light text-xs md:text-base">{institucion}</span>
         </div>
         {estaVigente ? (
           <div
             className={`text-xs text-white font-bold z-10 absolute bottom-3 right-3 px-2 py-1 rounded-2xl`}
-            style={{ backgroundColor: tipoData.color }}
+            style={{
+              backgroundColor: hasMultipleTypes ? "#134e4a" : tipoData.color,
+            }}
           >
             ¡Inscribite Hoy!
           </div>
@@ -73,7 +87,7 @@ const Card = ({ beca, openModal }) => {
         <div
           className={`text-xs z-10 grid place-content-center pl-2 pb-1 absolute bottom-3 left-3 text-white rounded-2xl`}
         >
-          {tipoData.icono && (
+          {(tipoData.icono || hasMultipleTypes) && (
             <Image
               src={iconoUrl}
               width={tipoData.icono.width}

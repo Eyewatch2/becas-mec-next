@@ -330,7 +330,7 @@ const FilterDeBecas = () => {
               <Link
                 scroll
                 href={"#becasEncontradas"}
-                aria-label="Buscar Becas"
+                aria-label="Buscar becas"
                 className="bg-green-500 hover:bg-green-600 transition-all ease-in-out focus:bg-green-600 text-white px-10 py-3 w-full hidden md:block md:w-auto rounded-full md:rounded-l-none"
               >
                 <FaMagnifyingGlass />
@@ -340,7 +340,7 @@ const FilterDeBecas = () => {
         </div>
       </div>
       <div className="max-w-screen-lg mx-auto bg-white md:px-10">
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-2 md:gap-5 px-2 pb-5 justify-center">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-2 md:gap-5 px-5 md:px-0 pb-5 justify-center">
           <button
             onClick={() => toggleCategory("Todas las Categorías")}
             className={`relative  ${
@@ -418,7 +418,7 @@ const FilterDeBecas = () => {
         </div>
 
         <FiltrosAplicados
-          className="hidden md:block"
+          className="hidden md:block px-2 md:px-0"
           hayFiltrosAplicados={hayFiltrosAplicados}
           renderAppliedFilters={renderAppliedFilters}
           handleRemoveFilter={handleRemoveFilter}

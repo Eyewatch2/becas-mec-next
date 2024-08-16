@@ -61,7 +61,7 @@ const ContenedorBecas = ({ becas, paginaActual, setPaginaActual, loading }) => {
         <p className="sr-only">
           Espera a que se carguen las becas para poder navegarlas.
         </p>
-        <div className="flex px-4 md:px-0 gap-2 md:gap-5 flex-wrap pt-8 pb-8 justify-center">
+        <div className="flex px-5 md:px-0 gap-2 md:gap-5 flex-wrap pt-8 pb-8 justify-center">
           {becasActuales.map((beca, index) => (
             <Card
               openModal={openModal}

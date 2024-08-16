@@ -41,19 +41,18 @@ const Footer = () => {
       <div className="p-2 text-white text-xs mx-auto flex flex-col justify-between md:flex-row gap-5">
         <div className="flex flex-col lg:flex-row justify-between max-w-screen-lg mx-auto items-center w-full">
           <p className="text-left col-span-10 md:w-3/4">
-            El Ministerio de Educación y Cultura no se hace responsable de la
-            información presentada. Ante cualquier consulta, contactarse con la
-            institución a cargo de la beca.
+          Becas UY es un sitio informativo que actualiza periódicamente la información enviada por los diferentes organismos del Estado. El Ministerio de Educación y Cultura no es responsable por errores u omisiones en la información presentada.
+
           </p>
           <p className=" flex gap-2 items-center">
             ¿Encontraste un error?{" "}
-            <Link
+            <a
               href={"mailto:comunicaeducacion@mec.gub.uy"}
               aria-label="Reportar error"
               className="underline grid place-content-center hover:text-red-500"
             >
               Reportar
-            </Link>
+            </a>
           </p>
         </div>
       </div>

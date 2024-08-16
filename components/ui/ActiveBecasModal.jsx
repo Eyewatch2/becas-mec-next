@@ -15,7 +15,6 @@ const ActiveBecasModal = () => {
         const response = await fetch(`${stables.API_URL}/config?limit=1000`);
         const data = await response.json();
         setContent(data.docs[0]);
-        console.log("Config fetched:", data.docs[0]);
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
@@ -38,7 +37,8 @@ const ActiveBecasModal = () => {
 
       return () => clearTimeout(timeoutId);
     }
-  }, [today, configLoading]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [today]);
 
   const month = today.toLocaleString("default", { month: "long" });
 

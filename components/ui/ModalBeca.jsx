@@ -12,7 +12,7 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
 
   const fechaInicio = new Date(becaSeleccionada.inicio_postulacion);
   const fechaFin = new Date(becaSeleccionada.fin_postulacion);
-  const opcionesDeFecha = { month: "long", year: "numeric" };
+  const opcionesDeFecha = { month: "long" };
   const fechaInicioFormateada = fechaInicio.toLocaleDateString(
     "es-UY",
     opcionesDeFecha
@@ -46,7 +46,7 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
                     {becaSeleccionada.tipo.map((tipo) => (
                       <span
                         key={tipo.id}
-                        className={`text-xxs capitalize text-white md:text-xs h-fit flex justify-center items-center w-fit z-10 px-2 py-1 rounded-md`}
+                        className={`text-xxs text-white md:text-xs h-fit flex justify-center items-center w-fit z-10 px-2 py-1 rounded-md`}
                         style={{ backgroundColor: tipo.color }}
                       >
                         {tipo.nombre}
@@ -78,7 +78,7 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
               </p>
               {hayRequisitosDeEdad && (
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-lg font-bold">Requisitos de Edad:</h4>
+                  <h4 className="text-lg font-bold">Requisitos de edad:</h4>
                   {becaSeleccionada.edad_min && (
                     <p className="text-sm">
                       <span className="font-bold">Edad mínima:</span>{" "}
@@ -96,7 +96,7 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
               {hayFechasDePostulacion && (
                 <div className="flex flex-col gap-1">
                   <h4 className="text-lg font-bold">
-                    Período de Postulaciones:
+                    Período de postulaciones:
                   </h4>
                   {becaSeleccionada.inicio_postulacion && (
                     <p className="text-sm">
