@@ -68,7 +68,11 @@ const Card = ({ beca, openModal }) => {
               <div
                 key={t.id}
                 className=" lowercase px-2 py-1 rounded-2xl"
-                style={{ backgroundColor: tipoData.color }}
+                style={{
+                  backgroundColor: hasMultipleTypes
+                    ? "#134e4a"
+                    : tipoData.color,
+                }}
               >
                 {t.nombre}
               </div>
@@ -76,7 +80,11 @@ const Card = ({ beca, openModal }) => {
             {tipo.length > 2 && (
               <div
                 className="lowercase px-3 py-1 rounded-2xl"
-                style={{ backgroundColor: tipoData.color }}
+                style={{
+                  backgroundColor: hasMultipleTypes
+                    ? "#134e4a"
+                    : tipoData.color,
+                }}
               >
                 {`+${tipo.length - 1}`}
               </div>
