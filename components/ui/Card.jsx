@@ -5,11 +5,11 @@ import { stables } from "@/stables/stables";
 const Card = ({ beca, openModal }) => {
   const { nombre, institucion, tipo, inicio_postulacion, fin_postulacion } =
     beca;
-  const fechaActual = new Date();
+  /* const fechaActual = new Date();
   const fechaInicio = new Date(inicio_postulacion);
   const fechaFin = new Date(fin_postulacion);
 
-  const estaVigente = fechaActual >= fechaInicio && fechaActual <= fechaFin;
+  const estaVigente = fechaActual >= fechaInicio && fechaActual <= fechaFin; */
 
   const tipoData = tipo[0] || [];
   const hasMultipleTypes = tipo.length > 1;
@@ -51,46 +51,32 @@ const Card = ({ beca, openModal }) => {
           </h2>
           <span className="font-light text-xs md:text-base">{institucion}</span>
         </div>
-        {estaVigente ? (
-          <div
-            className={`text-xs text-white font-bold z-10 absolute bottom-3 right-3 px-2 py-1 rounded-2xl`}
-            style={{
-              backgroundColor: hasMultipleTypes ? "#134e4a" : tipoData.color,
-            }}
-          >
-            ¡Inscribite Hoy!
-          </div>
-        ) : (
-          <div
-            className={`text-xs gap-1 flex z-10 absolute bottom-3 right-3 text-white`}
-          >
-            {tipo.slice(0, 1).map((t) => (
-              <div
-                key={t.id}
-                className=" lowercase px-2 py-1 rounded-2xl"
-                style={{
-                  backgroundColor: hasMultipleTypes
-                    ? "#134e4a"
-                    : tipoData.color,
-                }}
-              >
-                {t.nombre}
-              </div>
-            ))}
-            {tipo.length > 2 && (
-              <div
-                className="lowercase px-3 py-1 rounded-2xl"
-                style={{
-                  backgroundColor: hasMultipleTypes
-                    ? "#134e4a"
-                    : tipoData.color,
-                }}
-              >
-                {`+${tipo.length - 1}`}
-              </div>
-            )}
-          </div>
-        )}
+
+        <div
+          className={`text-xs gap-1 flex z-10 absolute bottom-3 right-3 text-white`}
+        >
+          {tipo.slice(0, 1).map((t) => (
+            <div
+              key={t.id}
+              className=" lowercase px-2 py-1 rounded-2xl"
+              style={{
+                backgroundColor: hasMultipleTypes ? "#134e4a" : tipoData.color,
+              }}
+            >
+              {t.nombre}
+            </div>
+          ))}
+          {tipo.length > 2 && (
+            <div
+              className="lowercase px-3 py-1 rounded-2xl"
+              style={{
+                backgroundColor: hasMultipleTypes ? "#134e4a" : tipoData.color,
+              }}
+            >
+              {`+${tipo.length - 1}`}
+            </div>
+          )}
+        </div>
 
         <div
           className={`text-xs z-10 grid place-content-center pl-2 pb-1 absolute bottom-3 left-3 text-white rounded-2xl`}

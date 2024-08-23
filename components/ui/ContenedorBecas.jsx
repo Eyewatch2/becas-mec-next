@@ -62,7 +62,7 @@ const ContenedorBecas = ({ becas, paginaActual, setPaginaActual, loading }) => {
           Espera a que se carguen las becas para poder navegarlas.
         </p>
         <div className="flex px-5 md:px-0 gap-2 md:gap-5 flex-wrap pt-8 pb-8 justify-center">
-          {becasActuales.map((beca, index) => (
+        {becasActuales.sort((a, b) => a.nombre.localeCompare(b.nombre)).map((beca, index) => (
             <Card
               openModal={openModal}
               closeModal={() => setIsModalOpen(false)}
