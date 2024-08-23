@@ -56,7 +56,7 @@ const ModalBeca = ({ isModalOpen, setIsModalOpen, becaSeleccionada }) => {
                 </div>
 
                 <h4 className="text-md font-bold flex flex-wrap gap-2 items-center">
-                  Nivel educativo requerido:
+                  Nivel educativo:
                   {!becaSeleccionada.nivel_educativo && (
                     <span className="flex items-center w-fit md:w-auto bg-green-500 rounded-md px-2 py-1 text-xxs md:text-xs font-semibold text-white">
                       Cualquier nivel educativo
