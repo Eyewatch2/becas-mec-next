@@ -11,7 +11,9 @@ const ContenedorBecas = ({ becas, paginaActual, setPaginaActual, loading }) => {
 
   const indiceUltimaBeca = paginaActual * becasPorPagina;
   const indicePrimeraBeca = indiceUltimaBeca - becasPorPagina;
-  const becasActuales = becas.slice(indicePrimeraBeca, indiceUltimaBeca);
+  const becasActuales = becas
+    .sort((a, b) => a.nombre.localeCompare(b.nombre))
+    .slice(indicePrimeraBeca, indiceUltimaBeca);
 
   const cambiarPagina = ({ selected }) => setPaginaActual(selected + 1);
 
@@ -62,14 +64,16 @@ const ContenedorBecas = ({ becas, paginaActual, setPaginaActual, loading }) => {
           Espera a que se carguen las becas para poder navegarlas.
         </p>
         <div className="flex px-5 md:px-0 gap-2 md:gap-5 flex-wrap pt-8 pb-8 justify-center">
-        {becasActuales.sort((a, b) => a.nombre.localeCompare(b.nombre)).map((beca, index) => (
-            <Card
-              openModal={openModal}
-              closeModal={() => setIsModalOpen(false)}
-              key={beca.nombre + index}
-              beca={beca}
-            />
-          ))}
+          {becasActuales
+            .sort((a, b) => a.nombre.localeCompare(b.nombre))
+            .map((beca, index) => (
+              <Card
+                openModal={openModal}
+                closeModal={() => setIsModalOpen(false)}
+                key={beca.nombre + index}
+                beca={beca}
+              />
+            ))}
         </div>
         {numeroDePaginas > 1 && (
           <ul className="flex justify-center items-center gap-2 mt-4 pb-5">
