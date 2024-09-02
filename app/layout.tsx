@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 import Header from "@/components/Header";
 
@@ -66,6 +67,7 @@ export default function RootLayout({
           sizes="32x32"
         />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <Analytics />
       </head>
       <body className={manrope.className}>
         <Header />
