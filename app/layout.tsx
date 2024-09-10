@@ -1,4 +1,4 @@
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 
 import { Manrope } from "next/font/google";
@@ -74,8 +74,8 @@ export default function RootLayout({
       <body className={manrope.className}>
         <Header />
         {children}
-        <GoogleAnalytics gaId="G-PSCDPXCZFS" />
       </body>
+      <GoogleAnalytics gaId="G-PSCDPXCZFS" />
     </html>
   );
 }
