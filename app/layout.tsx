@@ -1,4 +1,6 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from "next";
+
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
@@ -72,6 +74,7 @@ export default function RootLayout({
       <body className={manrope.className}>
         <Header />
         {children}
+        <GoogleAnalytics gaId="G-PSCDPXCZFS" />
       </body>
     </html>
   );
