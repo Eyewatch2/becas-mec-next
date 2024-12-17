@@ -24,9 +24,22 @@ const Card = ({ beca, openModal }) => {
       ? `${stables.BASE_URL}${tipoData.icono.filename}`
       : "/svg/otros.svg";
 
+  // Función para enviar eventos personalizados a GA4
+  const sendAnalyticsEvent = (nombreBeca) => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "beca_click", {
+        event_category: "Interacción Beca",
+        event_label: nombreBeca,
+      });
+    }
+  };
+
   return (
     <button
-      onClick={() => openModal(beca)}
+      onClick={() => {
+        sendAnalyticsEvent(beca.nombre); // Enviar el nombre de la beca a GA
+        openModal(beca);
+      }}
       className={`w-full rounded-xl cursor-pointer md:w-[calc(31.5%)] md:hover:scale-110 transition-all ease-in-out md:px-0`}
     >
       <div
