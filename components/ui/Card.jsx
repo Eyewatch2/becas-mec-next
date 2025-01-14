@@ -27,9 +27,19 @@ const Card = ({ beca, openModal }) => {
   // Función para enviar eventos personalizados a GA4
   const sendAnalyticsEvent = (nombreBeca) => {
     if (typeof window !== "undefined" && window.gtag) {
+      // Evento general de click en becas
       window.gtag("event", "beca_click", {
         event_category: "Interacción Beca",
         event_label: nombreBeca,
+      });
+
+      // Evento específico para cada beca
+      window.gtag("event", nombreBeca, {
+        event_category: "Vista Beca",
+        event_label: "Click en beca específica",
+        beca_nombre: nombreBeca,
+        beca_institucion: institucion,
+        beca_tipo: tipo.map(t => t.nombre).join(", ")
       });
     }
   };
