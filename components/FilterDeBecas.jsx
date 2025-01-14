@@ -253,7 +253,7 @@ const FilterDeBecas = () => {
   return (
     <section id="encontraTuBeca" className="encuentra-tu-beca bg-transparent">
       <div className="container max-w-screen-lg mx-auto pt-16 md:py-16 bg-white flex flex-col gap-5 items-center">
-        <h2 className="text-lg uppercase tracking-[0.6rem] font-bold text-green-500">
+        <h2 className="text-lg uppercase tracking-[0.6rem] font-bold text-green-500 px-5 sm:px-0">
           Encontrá tu beca
         </h2>
 
