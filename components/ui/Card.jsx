@@ -34,12 +34,10 @@ const Card = ({ beca, openModal }) => {
       });
 
       // Evento específico para cada beca
-      window.gtag("event", nombreBeca, {
+      window.gtag("event", `click_beca_${nombreBeca}`, {
         event_category: "Vista Beca",
         event_label: "Click en beca específica",
         beca_nombre: nombreBeca,
-        beca_institucion: institucion,
-        beca_tipo: tipo.map(t => t.nombre).join(", ")
       });
     }
   };
